@@ -12,19 +12,35 @@ function Logo({ light }: { light?: boolean }) {
   return (
     <Link
       href="/"
-      className="group flex items-center gap-2.5"
+      className="group flex items-center gap-3"
       aria-label={`${company.name} — home`}
     >
-      <span className="grid h-9 w-9 place-items-center rounded-lg bg-ember font-display text-lg font-bold text-white transition-transform duration-300 ease-out-expo group-hover:scale-105">
-        M
-      </span>
       <span
         className={cn(
-          "font-display text-xl font-semibold tracking-tight",
-          light ? "text-paper" : "text-navy"
+          "grid h-10 w-10 place-items-center rounded-xl p-1 transition-transform duration-300 ease-out-expo group-hover:scale-105",
+          light ? "bg-white/95 shadow-elevated" : "bg-transparent"
         )}
       >
-        {company.name}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/logo.png" alt="" className="h-full w-full object-contain" />
+      </span>
+      <span className="flex flex-col leading-none">
+        <span
+          className={cn(
+            "font-display text-xl font-semibold tracking-tight",
+            light ? "text-paper" : "text-navy"
+          )}
+        >
+          {company.name}
+        </span>
+        <span
+          className={cn(
+            "mt-1 hidden text-[0.6rem] font-medium uppercase tracking-[0.16em] sm:block",
+            light ? "text-steel-lighter" : "text-steel-light"
+          )}
+        >
+          Micro Engineering, Tech &amp; Trading
+        </span>
       </span>
     </Link>
   );
@@ -124,7 +140,7 @@ export function Header() {
                               )}
                             </span>
                             <ArrowUpRight
-                              className="mt-0.5 h-4 w-4 shrink-0 text-steel-lighter opacity-0 transition-all duration-200 group-hover:text-ember group-hover:opacity-100"
+                              className="mt-0.5 h-4 w-4 shrink-0 text-steel-lighter opacity-0 transition-all duration-200 group-hover:text-azure group-hover:opacity-100"
                               aria-hidden
                             />
                           </Link>
@@ -155,7 +171,7 @@ export function Header() {
         <div className="hidden lg:block">
           <Link
             href="/request-a-quote"
-            className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-ember px-5 py-2.5 text-sm font-medium text-white transition-all duration-300 ease-out-expo hover:bg-ember-dark hover:shadow-elevated"
+            className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-azure px-5 py-2.5 text-sm font-medium text-white transition-all duration-300 ease-out-expo hover:bg-azure-dark hover:shadow-elevated"
           >
             Request a Quote
             <ArrowUpRight className="h-4 w-4" aria-hidden />
@@ -214,7 +230,7 @@ export function Header() {
               ))}
               <Link
                 href="/request-a-quote"
-                className="mt-3 inline-flex items-center justify-center gap-2 rounded-full bg-ember px-6 py-3.5 text-sm font-medium text-white"
+                className="mt-3 inline-flex items-center justify-center gap-2 rounded-full bg-azure px-6 py-3.5 text-sm font-medium text-white"
               >
                 Request a Quote
                 <ArrowUpRight className="h-4 w-4" aria-hidden />

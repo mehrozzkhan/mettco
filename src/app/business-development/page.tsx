@@ -38,7 +38,7 @@ export default function BusinessDevelopmentPage() {
                   <h2 className="mt-6 text-xl font-semibold">{t.title}</h2>
                   <p className="mt-2 flex-1 text-sm leading-relaxed text-steel-light md:text-base">{t.desc}</p>
                   <div className="mt-6">
-                    <Button href="/contact" variant="ghost" className="px-0 text-ember">{t.cta}</Button>
+                    <Button href="/contact" variant="ghost" className="px-0 text-azure">{t.cta}</Button>
                   </div>
                 </div>
               </RevealItem>

@@ -5,7 +5,7 @@ export default function NotFound() {
     <section className="grid-texture grid min-h-dvh place-items-center bg-ink px-6">
       <div className="text-center">
         <p className="eyebrow justify-center">
-          <span className="h-px w-8 bg-ember" aria-hidden />
+          <span className="h-px w-8 bg-azure" aria-hidden />
           Error 404
         </p>
         <h1 className="mt-6 text-5xl font-semibold text-paper md:text-7xl">

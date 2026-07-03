@@ -21,36 +21,36 @@ const config: Config = {
     },
     extend: {
       colors: {
-        // Industrial Ember design system
+        // METTCO brand system — deep navy + cerulean (from brand logo)
         ink: {
-          DEFAULT: "#0B0E14",
-          900: "#0B0E14",
-          800: "#11151F",
-          700: "#171C28",
+          DEFAULT: "#050D1A",
+          900: "#050D1A",
+          800: "#0A1626",
+          700: "#101F35",
         },
         navy: {
-          DEFAULT: "#0F172A",
-          light: "#1E293B",
+          DEFAULT: "#0A2440",
+          light: "#123256",
         },
         steel: {
-          DEFAULT: "#334155",
-          light: "#64748B",
-          lighter: "#94A3B8",
+          DEFAULT: "#33475C",
+          light: "#5D7288",
+          lighter: "#8FA3B8",
         },
-        ember: {
-          DEFAULT: "#EA5A17",
-          light: "#F97316",
-          dark: "#C2410C",
-          soft: "#FDBA74",
+        azure: {
+          DEFAULT: "#0080B8",
+          light: "#22A8DE",
+          dark: "#00618D",
+          soft: "#7DD0F0",
         },
         paper: {
-          DEFAULT: "#F6F5F2",
-          warm: "#EFEDE7",
+          DEFAULT: "#F5F7FA",
+          warm: "#EBEFF4",
           card: "#FFFFFF",
         },
         line: {
-          DEFAULT: "#E3E1DA",
-          dark: "#232936",
+          DEFAULT: "#DCE3EB",
+          dark: "#1B2C42",
         },
       },
       fontFamily: {

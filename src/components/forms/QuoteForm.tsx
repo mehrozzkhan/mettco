@@ -6,7 +6,7 @@ import { company, industries, productCategories } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 const inputCls =
-  "w-full rounded-xl border border-line bg-white px-4 py-3.5 text-sm text-navy placeholder:text-steel-lighter transition-colors duration-200 focus:border-ember focus:outline-none focus:ring-2 focus:ring-ember/20";
+  "w-full rounded-xl border border-line bg-white px-4 py-3.5 text-sm text-navy placeholder:text-steel-lighter transition-colors duration-200 focus:border-azure focus:outline-none focus:ring-2 focus:ring-azure/20";
 
 const labelCls = "mb-2 block text-sm font-medium text-navy";
 
@@ -43,12 +43,12 @@ export function QuoteForm({ compact = false }: { compact?: boolean }) {
   if (sent) {
     return (
       <div className="rounded-2xl border border-line bg-white p-10 text-center md:p-14">
-        <CheckCircle2 className="mx-auto h-12 w-12 text-ember" aria-hidden />
+        <CheckCircle2 className="mx-auto h-12 w-12 text-azure" aria-hidden />
         <h3 className="mt-5 text-2xl font-semibold">Almost there</h3>
         <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-steel-light">
           Your email app should have opened with your request pre-filled — just
           press send. If it didn&rsquo;t, email us directly at{" "}
-          <a href={`mailto:${company.email}`} className="font-medium text-ember">
+          <a href={`mailto:${company.email}`} className="font-medium text-azure">
             {company.email}
           </a>
           .
@@ -56,7 +56,7 @@ export function QuoteForm({ compact = false }: { compact?: boolean }) {
         <button
           type="button"
           onClick={() => setSent(false)}
-          className="mt-6 cursor-pointer text-sm font-medium text-ember hover:underline"
+          className="mt-6 cursor-pointer text-sm font-medium text-azure hover:underline"
         >
           Fill the form again
         </button>
@@ -73,19 +73,19 @@ export function QuoteForm({ compact = false }: { compact?: boolean }) {
       <div className={cn("grid gap-6", !compact && "md:grid-cols-2")}>
         <div>
           <label htmlFor="name" className={labelCls}>
-            Full name <span className="text-ember">*</span>
+            Full name <span className="text-azure">*</span>
           </label>
           <input id="name" name="name" required autoComplete="name" placeholder="Your name" className={inputCls} />
         </div>
         <div>
           <label htmlFor="companyName" className={labelCls}>
-            Company {!compact && <span className="text-ember">*</span>}
+            Company {!compact && <span className="text-azure">*</span>}
           </label>
           <input id="companyName" name="companyName" required={!compact} autoComplete="organization" placeholder="Company name" className={inputCls} />
         </div>
         <div>
           <label htmlFor="email" className={labelCls}>
-            Work email <span className="text-ember">*</span>
+            Work email <span className="text-azure">*</span>
           </label>
           <input id="email" name="email" type="email" required autoComplete="email" placeholder="you@company.com" className={inputCls} />
         </div>
@@ -108,7 +108,7 @@ export function QuoteForm({ compact = false }: { compact?: boolean }) {
             </div>
             <div>
               <label htmlFor="category" className={labelCls}>
-                Product category <span className="text-ember">*</span>
+                Product category <span className="text-azure">*</span>
               </label>
               <select id="category" name="category" required className={inputCls} defaultValue="">
                 <option value="" disabled>Select a category</option>
@@ -127,7 +127,7 @@ export function QuoteForm({ compact = false }: { compact?: boolean }) {
 
         <div className={cn(!compact && "md:col-span-2")}>
           <label htmlFor="message" className={labelCls}>
-            {compact ? "Message" : "Requirement details"} <span className="text-ember">*</span>
+            {compact ? "Message" : "Requirement details"} <span className="text-azure">*</span>
           </label>
           <textarea
             id="message"
@@ -145,7 +145,7 @@ export function QuoteForm({ compact = false }: { compact?: boolean }) {
 
       <button
         type="submit"
-        className="group mt-8 inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-full bg-ember px-8 py-4 text-base font-medium text-white transition-all duration-300 hover:bg-ember-dark hover:shadow-elevated md:w-auto"
+        className="group mt-8 inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-full bg-azure px-8 py-4 text-base font-medium text-white transition-all duration-300 hover:bg-azure-dark hover:shadow-elevated md:w-auto"
       >
         {compact ? "Send message" : "Submit quote request"}
         <ArrowUpRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden />

@@ -31,7 +31,7 @@ export default function ImportExportPage() {
         <div className="container-x grid gap-5 lg:grid-cols-2">
           <Reveal>
             <div className="grid-texture h-full rounded-2xl bg-ink p-10 md:p-14">
-              <ArrowDownToLine className="h-8 w-8 text-ember" aria-hidden />
+              <ArrowDownToLine className="h-8 w-8 text-azure" aria-hidden />
               <h2 className="mt-6 text-2xl font-semibold text-paper md:text-3xl">Importing into Pakistan</h2>
               <p className="mt-4 text-base leading-relaxed text-steel-lighter">
                 Industrial products, machinery components, packaging materials and
@@ -41,7 +41,7 @@ export default function ImportExportPage() {
               <ul className="mt-8 space-y-3 text-sm text-paper/80">
                 {["Supplier payment & LC coordination", "Import documentation & clearance", "Consolidated freight for smaller volumes", "Door-to-door delivery"].map((li) => (
                   <li key={li} className="flex items-start gap-2.5">
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-ember" aria-hidden />
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-azure" aria-hidden />
                     {li}
                   </li>
                 ))}
@@ -50,7 +50,7 @@ export default function ImportExportPage() {
           </Reveal>
           <Reveal delay={0.1}>
             <div className="h-full rounded-2xl border border-line bg-white p-10 md:p-14">
-              <ArrowUpFromLine className="h-8 w-8 text-ember" aria-hidden />
+              <ArrowUpFromLine className="h-8 w-8 text-azure" aria-hidden />
               <h2 className="mt-6 text-2xl font-semibold md:text-3xl">Exporting from Pakistan</h2>
               <p className="mt-4 text-base leading-relaxed text-steel-light">
                 Connecting Pakistani manufacturers with international buyers —
@@ -60,7 +60,7 @@ export default function ImportExportPage() {
               <ul className="mt-8 space-y-3 text-sm text-steel">
                 {["Buyer sourcing & trade matchmaking", "Export documentation & compliance", "Quality inspection before dispatch", "International freight coordination"].map((li) => (
                   <li key={li} className="flex items-start gap-2.5">
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-ember" aria-hidden />
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-azure" aria-hidden />
                     {li}
                   </li>
                 ))}
@@ -80,7 +80,7 @@ export default function ImportExportPage() {
             {services.map((s) => (
               <RevealItem key={s.title}>
                 <div className="h-full rounded-2xl border border-line bg-white p-8">
-                  <s.icon className="h-6 w-6 text-ember" aria-hidden />
+                  <s.icon className="h-6 w-6 text-azure" aria-hidden />
                   <h3 className="mt-5 text-base font-semibold">{s.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-steel-light">{s.desc}</p>
                 </div>

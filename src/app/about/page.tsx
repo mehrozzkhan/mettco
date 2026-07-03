@@ -65,7 +65,7 @@ export default function AboutPage() {
             {values.map((v, i) => (
               <RevealItem key={v.title}>
                 <div className="h-full bg-ink-800 p-8 md:p-10">
-                  <span className="font-display text-sm font-semibold text-ember">
+                  <span className="font-display text-sm font-semibold text-azure">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <h3 className="mt-4 text-xl font-semibold text-paper">{v.title}</h3>

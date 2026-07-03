@@ -41,8 +41,8 @@ export default function WhyPage() {
           <RevealGroup className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {reasons.map((r, i) => (
               <RevealItem key={r.title}>
-                <div className="h-full rounded-2xl border border-line bg-white p-8 transition-all duration-300 ease-out-expo hover:-translate-y-1 hover:border-ember/40 hover:shadow-elevated">
-                  <span className="font-display text-4xl font-semibold text-ember/25">
+                <div className="h-full rounded-2xl border border-line bg-white p-8 transition-all duration-300 ease-out-expo hover:-translate-y-1 hover:border-azure/40 hover:shadow-elevated">
+                  <span className="font-display text-4xl font-semibold text-azure/25">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <h3 className="mt-4 text-lg font-semibold">{r.title}</h3>
@@ -66,7 +66,7 @@ export default function WhyPage() {
             {commitments.map((c) => (
               <RevealItem key={c}>
                 <div className="flex items-center gap-4 rounded-xl border border-line-dark bg-ink-800 px-6 py-5">
-                  <CheckCircle2 className="h-5 w-5 shrink-0 text-ember" aria-hidden />
+                  <CheckCircle2 className="h-5 w-5 shrink-0 text-azure" aria-hidden />
                   <p className="text-sm font-medium text-paper md:text-base">{c}</p>
                 </div>
               </RevealItem>

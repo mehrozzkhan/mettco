@@ -60,7 +60,7 @@ export default function VisionPage() {
           />
           <Reveal delay={0.1}>
             <div className="rounded-2xl border border-line-dark bg-ink-800 p-10">
-              <TrendingUp className="h-8 w-8 text-ember" aria-hidden />
+              <TrendingUp className="h-8 w-8 text-azure" aria-hidden />
               <blockquote className="mt-6 text-xl font-medium leading-relaxed text-paper md:text-2xl">
                 &ldquo;Rather than focusing on a single product, METTCO is built to
                 serve multiple industrial sectors — through sourcing, trading,
@@ -80,7 +80,7 @@ export default function VisionPage() {
             </h2>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Button href="/business-development" size="lg">Partner with us</Button>
-              <Button href="/contact" variant="ghost" className="text-ember" size="lg">Contact us</Button>
+              <Button href="/contact" variant="ghost" className="text-azure" size="lg">Contact us</Button>
             </div>
           </Reveal>
         </div>

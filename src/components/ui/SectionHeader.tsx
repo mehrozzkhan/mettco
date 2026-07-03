@@ -27,7 +27,7 @@ export function SectionHeader({
       )}
     >
       <p className={cn("eyebrow", align === "center" && "justify-center")}>
-        <span className="h-px w-8 bg-ember" aria-hidden />
+        <span className="h-px w-8 bg-azure" aria-hidden />
         {eyebrow}
       </p>
       <h2

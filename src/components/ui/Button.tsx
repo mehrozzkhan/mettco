@@ -23,14 +23,14 @@ export function Button({
     <Link
       href={href}
       className={cn(
-        "group inline-flex cursor-pointer items-center justify-center gap-2 rounded-full font-medium transition-all duration-300 ease-out-expo focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember",
+        "group inline-flex cursor-pointer items-center justify-center gap-2 rounded-full font-medium transition-all duration-300 ease-out-expo focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azure",
         size === "md" ? "px-6 py-3 text-sm" : "px-8 py-4 text-base",
         variant === "primary" &&
-          "bg-ember text-white hover:bg-ember-dark hover:shadow-elevated",
+          "bg-azure text-white hover:bg-azure-dark hover:shadow-elevated",
         variant === "outline" &&
-          "border border-line-dark/60 text-paper hover:border-ember hover:text-ember",
+          "border border-line-dark/60 text-paper hover:border-azure hover:text-azure",
         variant === "ghost" &&
-          "text-navy hover:text-ember",
+          "text-navy hover:text-azure",
         variant === "light" &&
           "bg-white text-navy shadow-elevated hover:shadow-deep",
         className

@@ -13,12 +13,12 @@ export function PageHero({ eyebrow, title, lead }: PageHeroProps) {
       {/* Ember glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -top-32 right-[-10%] h-[420px] w-[420px] rounded-full bg-ember/15 blur-[120px]"
+        className="pointer-events-none absolute -top-32 right-[-10%] h-[420px] w-[420px] rounded-full bg-azure/15 blur-[120px]"
       />
       <div className="container-x relative">
         <Reveal>
           <p className="eyebrow">
-            <span className="h-px w-8 bg-ember" aria-hidden />
+            <span className="h-px w-8 bg-azure" aria-hidden />
             {eyebrow}
           </p>
           <h1 className="mt-6 max-w-4xl text-4xl font-semibold leading-[1.05] text-paper md:text-6xl">

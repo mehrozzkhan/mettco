@@ -32,7 +32,7 @@ export default function ProcessPage() {
           {processSteps.map((step, i) => (
             <Reveal key={step.n} delay={i * 0.05}>
               <div className="grid gap-8 rounded-2xl border border-line bg-white p-8 md:grid-cols-[120px_1fr_1.2fr] md:p-12">
-                <span className="font-display text-6xl font-semibold text-ember/25 md:text-7xl">
+                <span className="font-display text-6xl font-semibold text-azure/25 md:text-7xl">
                   {step.n}
                 </span>
                 <div>
@@ -42,7 +42,7 @@ export default function ProcessPage() {
                 <ul className="grid content-start gap-3 sm:grid-cols-2">
                   {detail[step.n]?.map((d) => (
                     <li key={d} className="flex items-start gap-2.5 text-sm text-steel">
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-ember" aria-hidden />
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-azure" aria-hidden />
                       {d}
                     </li>
                   ))}

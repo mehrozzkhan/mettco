@@ -42,7 +42,7 @@ export default function GlobalSourcingPage() {
             {network.map((n) => (
               <RevealItem key={n.region}>
                 <div className="h-full rounded-2xl border border-line bg-white p-8">
-                  <MapPin className="h-6 w-6 text-ember" aria-hidden />
+                  <MapPin className="h-6 w-6 text-azure" aria-hidden />
                   <h3 className="mt-5 text-lg font-semibold">{n.region}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-steel-light">{n.desc}</p>
                 </div>
@@ -63,7 +63,7 @@ export default function GlobalSourcingPage() {
             {pillars.map((p) => (
               <RevealItem key={p.title}>
                 <div className="h-full bg-ink-800 p-8 md:p-10">
-                  <p.icon className="h-7 w-7 text-ember" aria-hidden />
+                  <p.icon className="h-7 w-7 text-azure" aria-hidden />
                   <h3 className="mt-5 text-lg font-semibold text-paper">{p.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-steel-lighter">{p.desc}</p>
                 </div>

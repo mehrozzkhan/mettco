@@ -33,7 +33,7 @@ export default function CapabilitiesPage() {
           {capabilities.map((cap, i) => (
             <Reveal key={cap.title} delay={i * 0.04}>
               <div className="grid gap-8 rounded-2xl border border-line bg-white p-8 md:grid-cols-[80px_1fr_1.1fr] md:p-12">
-                <span className="font-display text-5xl font-semibold text-ember/25">
+                <span className="font-display text-5xl font-semibold text-azure/25">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <div>
@@ -43,7 +43,7 @@ export default function CapabilitiesPage() {
                 <ul className="grid content-start gap-3 sm:grid-cols-2">
                   {extras[cap.title]?.map((e) => (
                     <li key={e} className="flex items-start gap-2.5 text-sm text-steel">
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-ember" aria-hidden />
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-azure" aria-hidden />
                       {e}
                     </li>
                   ))}

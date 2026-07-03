@@ -50,7 +50,7 @@ export default function ProductsPage() {
                   <ul className="grid content-center gap-3 sm:grid-cols-2">
                     {examples[cat.name]?.map((e) => (
                       <li key={e} className="flex items-start gap-2.5 rounded-lg bg-paper px-4 py-3 text-sm text-steel">
-                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-ember" aria-hidden />
+                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-azure" aria-hidden />
                         {e}
                       </li>
                     ))}

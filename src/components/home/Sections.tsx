@@ -43,7 +43,7 @@ export function IndustriesStrip() {
               className="flex items-center gap-12 text-sm font-medium uppercase tracking-[0.18em] text-steel-light"
             >
               {ind.name}
-              <span className="h-1 w-1 rounded-full bg-ember" aria-hidden />
+              <span className="h-1 w-1 rounded-full bg-azure" aria-hidden />
             </span>
           ))}
         </div>
@@ -64,7 +64,7 @@ export function CategoriesSection() {
             lead="From rotating equipment to packaging lines — METTCO sources, verifies and delivers the products your operations depend on."
           />
           <Reveal delay={0.15}>
-            <Button href="/products" variant="ghost" className="text-ember">
+            <Button href="/products" variant="ghost" className="text-azure">
               All product categories
             </Button>
           </Reveal>
@@ -77,16 +77,16 @@ export function CategoriesSection() {
               <RevealItem key={cat.name}>
                 <Link
                   href="/products"
-                  className="group flex h-full flex-col rounded-2xl border border-line bg-white p-8 transition-all duration-300 ease-out-expo hover:-translate-y-1 hover:border-ember/40 hover:shadow-elevated"
+                  className="group flex h-full flex-col rounded-2xl border border-line bg-white p-8 transition-all duration-300 ease-out-expo hover:-translate-y-1 hover:border-azure/40 hover:shadow-elevated"
                 >
-                  <span className="grid h-12 w-12 place-items-center rounded-xl bg-paper-warm text-navy transition-colors duration-300 group-hover:bg-ember group-hover:text-white">
+                  <span className="grid h-12 w-12 place-items-center rounded-xl bg-paper-warm text-navy transition-colors duration-300 group-hover:bg-azure group-hover:text-white">
                     <Icon className="h-6 w-6" aria-hidden />
                   </span>
                   <h3 className="mt-6 text-lg font-semibold">{cat.name}</h3>
                   <p className="mt-2 flex-1 text-sm leading-relaxed text-steel-light">
                     {cat.desc}
                   </p>
-                  <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-ember">
+                  <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-azure">
                     Explore
                     <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden />
                   </span>
@@ -106,7 +106,7 @@ export function CapabilitiesSection() {
     <section className="grid-texture relative overflow-hidden bg-ink py-24 md:py-32">
       <div
         aria-hidden
-        className="pointer-events-none absolute right-[-15%] top-1/3 h-[520px] w-[520px] rounded-full bg-ember/10 blur-[140px]"
+        className="pointer-events-none absolute right-[-15%] top-1/3 h-[520px] w-[520px] rounded-full bg-azure/10 blur-[140px]"
       />
       <div className="container-x relative">
         <SectionHeader
@@ -120,7 +120,7 @@ export function CapabilitiesSection() {
           {capabilities.map((cap, i) => (
             <RevealItem key={cap.title}>
               <div className="group h-full bg-ink-800 p-8 transition-colors duration-300 hover:bg-ink-700">
-                <span className="font-display text-sm font-semibold text-ember">
+                <span className="font-display text-sm font-semibold text-azure">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3 className="mt-4 text-lg font-semibold text-paper">{cap.title}</h3>
@@ -184,9 +184,9 @@ export function GlobalTradeSection() {
             <RevealItem key={p.title}>
               <Link
                 href={p.href}
-                className="group flex items-start gap-6 rounded-2xl border border-line bg-white p-8 transition-all duration-300 ease-out-expo hover:-translate-y-1 hover:border-ember/40 hover:shadow-elevated"
+                className="group flex items-start gap-6 rounded-2xl border border-line bg-white p-8 transition-all duration-300 ease-out-expo hover:-translate-y-1 hover:border-azure/40 hover:shadow-elevated"
               >
-                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-paper-warm text-navy transition-colors duration-300 group-hover:bg-ember group-hover:text-white">
+                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-paper-warm text-navy transition-colors duration-300 group-hover:bg-azure group-hover:text-white">
                   <p.icon className="h-6 w-6" aria-hidden />
                 </span>
                 <span>
@@ -196,7 +196,7 @@ export function GlobalTradeSection() {
                   </p>
                 </span>
                 <ArrowUpRight
-                  className="ml-auto mt-1 h-5 w-5 shrink-0 text-steel-lighter transition-all duration-300 group-hover:text-ember"
+                  className="ml-auto mt-1 h-5 w-5 shrink-0 text-steel-lighter transition-all duration-300 group-hover:text-azure"
                   aria-hidden
                 />
               </Link>
@@ -224,7 +224,7 @@ export function ProcessSection() {
           {processSteps.map((step) => (
             <RevealItem key={step.n}>
               <div className="relative h-full rounded-2xl border border-line bg-white p-6">
-                <span className="font-display text-4xl font-semibold text-ember/25">
+                <span className="font-display text-4xl font-semibold text-azure/25">
                   {step.n}
                 </span>
                 <h3 className="mt-4 font-semibold">{step.title}</h3>
@@ -255,7 +255,7 @@ export function IndustriesSection() {
             title="Ten sectors. One standard of supply."
           />
           <Reveal delay={0.15}>
-            <Button href="/industries" variant="ghost" className="text-ember">
+            <Button href="/industries" variant="ghost" className="text-azure">
               All industries
             </Button>
           </Reveal>
@@ -269,7 +269,7 @@ export function IndustriesSection() {
                 className="group flex h-full min-h-[132px] flex-col justify-between bg-white p-6 transition-colors duration-300 hover:bg-paper-warm"
               >
                 <h3 className="text-base font-semibold">{ind.name}</h3>
-                <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-[0.14em] text-steel-lighter transition-colors duration-300 group-hover:text-ember">
+                <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-[0.14em] text-steel-lighter transition-colors duration-300 group-hover:text-azure">
                   View sector
                   <ArrowUpRight className="h-3.5 w-3.5" aria-hidden />
                 </span>

@@ -2,15 +2,15 @@
 
 export const company = {
   name: "METTCO",
-  legalName: "Micro Engineering Technology & Trading Company",
+  legalName: "Micro Engineering, Tech and Trading Co",
   tagline: "Industrial sourcing, trading & engineering supply — engineered for reliability.",
   descriptionShort:
     "A B2B industrial trading, sourcing and engineering company connecting businesses with reliable products through trusted local and international supply networks.",
   country: "Pakistan",
-  email: "info@mettco.com",
-  phone: "+92 300 000 0000",
-  address: "Karachi, Pakistan",
-  domain: "mettco.com",
+  email: "info@mettco.com.pk",
+  phone: "+92 313 9485808",
+  address: "42-P Izmir Town, Lahore, Pakistan",
+  domain: "mettco.com.pk",
 };
 
 export type NavChild = { label: string; href: string; desc?: string };

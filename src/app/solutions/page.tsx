@@ -33,8 +33,8 @@ export default function SolutionsPage() {
           <RevealGroup className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {solutions.map((s) => (
               <RevealItem key={s.title}>
-                <div className="group h-full rounded-2xl border border-line bg-white p-8 transition-all duration-300 ease-out-expo hover:-translate-y-1 hover:border-ember/40 hover:shadow-elevated">
-                  <span className="grid h-12 w-12 place-items-center rounded-xl bg-paper-warm text-navy transition-colors duration-300 group-hover:bg-ember group-hover:text-white">
+                <div className="group h-full rounded-2xl border border-line bg-white p-8 transition-all duration-300 ease-out-expo hover:-translate-y-1 hover:border-azure/40 hover:shadow-elevated">
+                  <span className="grid h-12 w-12 place-items-center rounded-xl bg-paper-warm text-navy transition-colors duration-300 group-hover:bg-azure group-hover:text-white">
                     <s.icon className="h-6 w-6" aria-hidden />
                   </span>
                   <h3 className="mt-6 text-lg font-semibold">{s.title}</h3>

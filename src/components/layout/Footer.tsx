@@ -41,7 +41,7 @@ export function Footer() {
         <div className="container-x flex flex-col items-start justify-between gap-8 py-16 md:flex-row md:items-center md:py-20">
           <div>
             <p className="eyebrow">
-              <span className="h-px w-8 bg-ember" aria-hidden />
+              <span className="h-px w-8 bg-azure" aria-hidden />
               Start a conversation
             </p>
             <h2 className="mt-4 max-w-xl text-3xl font-semibold leading-tight text-paper md:text-4xl">
@@ -50,7 +50,7 @@ export function Footer() {
           </div>
           <Link
             href="/request-a-quote"
-            className="group inline-flex shrink-0 cursor-pointer items-center gap-2 rounded-full bg-ember px-8 py-4 text-base font-medium text-white transition-all duration-300 hover:bg-ember-dark"
+            className="group inline-flex shrink-0 cursor-pointer items-center gap-2 rounded-full bg-azure px-8 py-4 text-base font-medium text-white transition-all duration-300 hover:bg-azure-dark"
           >
             Request a Quote
             <ArrowUpRight
@@ -65,8 +65,9 @@ export function Footer() {
       <div className="container-x grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-5">
         <div className="lg:col-span-2">
           <Link href="/" className="flex items-center gap-2.5" aria-label={`${company.name} — home`}>
-            <span className="grid h-9 w-9 place-items-center rounded-lg bg-ember font-display text-lg font-bold text-white">
-              M
+            <span className="grid h-10 w-10 place-items-center rounded-xl bg-white/95 p-1 shadow-elevated">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logo.png" alt="" className="h-full w-full object-contain" />
             </span>
             <span className="font-display text-xl font-semibold tracking-tight text-paper">
               {company.name}
@@ -77,18 +78,18 @@ export function Footer() {
           </p>
           <ul className="mt-6 space-y-3 text-sm text-steel-lighter">
             <li className="flex items-center gap-3">
-              <MapPin className="h-4 w-4 shrink-0 text-ember" aria-hidden />
+              <MapPin className="h-4 w-4 shrink-0 text-azure" aria-hidden />
               {company.address}
             </li>
             <li>
               <a href={`mailto:${company.email}`} className="flex items-center gap-3 transition-colors hover:text-paper">
-                <Mail className="h-4 w-4 shrink-0 text-ember" aria-hidden />
+                <Mail className="h-4 w-4 shrink-0 text-azure" aria-hidden />
                 {company.email}
               </a>
             </li>
             <li>
               <a href={`tel:${company.phone.replace(/\s/g, "")}`} className="flex items-center gap-3 transition-colors hover:text-paper">
-                <Phone className="h-4 w-4 shrink-0 text-ember" aria-hidden />
+                <Phone className="h-4 w-4 shrink-0 text-azure" aria-hidden />
                 {company.phone}
               </a>
             </li>

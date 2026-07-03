@@ -18,21 +18,37 @@ export function Hero() {
 
   return (
     <section className="grid-texture relative overflow-hidden bg-ink">
-      {/* Ember atmosphere */}
+      {/* Azure atmosphere */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-40 top-[-10%] h-[640px] w-[640px] rounded-full bg-ember/20 blur-[140px]"
+        className="pointer-events-none absolute -right-40 top-[-10%] h-[640px] w-[640px] rounded-full bg-azure/20 blur-[140px]"
       />
       <div
         aria-hidden
         className="pointer-events-none absolute -left-40 bottom-[-30%] h-[480px] w-[480px] rounded-full bg-navy-light/40 blur-[120px]"
       />
 
+      {/* Globe wireframe — echoes the METTCO letterhead */}
+      <svg
+        aria-hidden
+        viewBox="0 0 600 600"
+        fill="none"
+        className="pointer-events-none absolute -right-48 top-1/2 hidden h-[820px] w-[820px] -translate-y-1/2 opacity-[0.16] lg:block"
+      >
+        <circle cx="300" cy="300" r="298" stroke="#22A8DE" strokeWidth="0.8" />
+        <ellipse cx="300" cy="300" rx="298" ry="120" stroke="#22A8DE" strokeWidth="0.7" />
+        <ellipse cx="300" cy="300" rx="298" ry="220" stroke="#22A8DE" strokeWidth="0.5" />
+        <ellipse cx="300" cy="300" rx="120" ry="298" stroke="#22A8DE" strokeWidth="0.7" />
+        <ellipse cx="300" cy="300" rx="220" ry="298" stroke="#22A8DE" strokeWidth="0.5" />
+        <line x1="2" y1="300" x2="598" y2="300" stroke="#22A8DE" strokeWidth="0.7" />
+        <line x1="300" y1="2" x2="300" y2="598" stroke="#22A8DE" strokeWidth="0.7" />
+      </svg>
+
       <div className="container-x relative flex min-h-dvh flex-col justify-end pb-16 pt-40 md:pb-20">
         <div className="max-w-4xl">
           <motion.p {...fadeUp(0.1)} className="eyebrow">
-            <span className="h-px w-8 bg-ember" aria-hidden />
-            Micro Engineering Technology &amp; Trading Company
+            <span className="h-px w-8 bg-azure" aria-hidden />
+            Micro Engineering, Tech and Trading Co
           </motion.p>
 
           <motion.h1
@@ -41,7 +57,10 @@ export function Hero() {
           >
             Industrial supply,
             <br />
-            <span className="text-ember">engineered</span> for
+            <span className="bg-gradient-to-r from-azure-soft via-azure-light to-azure bg-clip-text text-transparent">
+              engineered
+            </span>{" "}
+            for
             <br />
             reliability.
           </motion.h1>
@@ -58,7 +77,7 @@ export function Hero() {
           <motion.div {...fadeUp(0.5)} className="mt-10 flex flex-wrap items-center gap-4">
             <Link
               href="/request-a-quote"
-              className="group inline-flex cursor-pointer items-center gap-2 rounded-full bg-ember px-8 py-4 text-base font-medium text-white transition-all duration-300 hover:bg-ember-dark hover:shadow-deep"
+              className="group inline-flex cursor-pointer items-center gap-2 rounded-full bg-azure px-8 py-4 text-base font-medium text-white transition-all duration-300 hover:bg-azure-dark hover:shadow-deep"
             >
               Request a Quote
               <ArrowUpRight
@@ -68,7 +87,7 @@ export function Hero() {
             </Link>
             <Link
               href="/capabilities"
-              className="group inline-flex cursor-pointer items-center gap-2 rounded-full border border-line-dark px-8 py-4 text-base font-medium text-paper/90 transition-all duration-300 hover:border-ember hover:text-ember"
+              className="group inline-flex cursor-pointer items-center gap-2 rounded-full border border-line-dark px-8 py-4 text-base font-medium text-paper/90 transition-all duration-300 hover:border-azure hover:text-azure"
             >
               Explore Capabilities
             </Link>
@@ -79,15 +98,15 @@ export function Hero() {
             className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm text-steel-lighter"
           >
             <li className="flex items-center gap-2">
-              <Globe2 className="h-4 w-4 text-ember" aria-hidden />
+              <Globe2 className="h-4 w-4 text-azure" aria-hidden />
               Local &amp; international networks
             </li>
             <li className="flex items-center gap-2">
-              <ShieldCheck className="h-4 w-4 text-ember" aria-hidden />
+              <ShieldCheck className="h-4 w-4 text-azure" aria-hidden />
               Quality-verified sourcing
             </li>
             <li className="flex items-center gap-2">
-              <Truck className="h-4 w-4 text-ember" aria-hidden />
+              <Truck className="h-4 w-4 text-azure" aria-hidden />
               Import &amp; export, handled
             </li>
           </motion.ul>

@@ -24,8 +24,8 @@ export default function IndustriesPage() {
           <RevealGroup className="grid gap-5 md:grid-cols-2" stagger={0.05}>
             {industries.map((ind, i) => (
               <RevealItem key={ind.slug}>
-                <div className="group flex h-full items-start gap-6 rounded-2xl border border-line bg-white p-8 transition-all duration-300 ease-out-expo hover:-translate-y-1 hover:border-ember/40 hover:shadow-elevated md:p-10">
-                  <span className="font-display text-3xl font-semibold text-ember/25">
+                <div className="group flex h-full items-start gap-6 rounded-2xl border border-line bg-white p-8 transition-all duration-300 ease-out-expo hover:-translate-y-1 hover:border-azure/40 hover:shadow-elevated md:p-10">
+                  <span className="font-display text-3xl font-semibold text-azure/25">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <div>
