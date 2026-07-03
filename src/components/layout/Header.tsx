@@ -97,7 +97,7 @@ export function Header() {
                     setOpenMenu(openMenu === item.label ? null : item.label)
                   }
                   className={cn(
-                    "flex cursor-pointer items-center gap-1 rounded-full px-4 py-2 text-sm font-medium transition-colors duration-200",
+                    "flex cursor-pointer items-center gap-1 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium transition-colors duration-200",
                     overDark
                       ? "text-paper/80 hover:text-paper"
                       : "text-steel hover:text-navy"
@@ -155,7 +155,7 @@ export function Header() {
                 key={item.label}
                 href={item.href}
                 className={cn(
-                  "rounded-full px-4 py-2 text-sm font-medium transition-colors duration-200",
+                  "whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium transition-colors duration-200",
                   overDark
                     ? "text-paper/80 hover:text-paper"
                     : "text-steel hover:text-navy",
