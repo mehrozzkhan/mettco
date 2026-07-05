@@ -7,7 +7,7 @@ import { industries } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Industries We Serve",
-  description: "Manufacturing, textile, food processing, warehousing, logistics, construction, engineering, pharmaceutical, packaging and agriculture — ten sectors, one standard of supply.",
+  description: "Manufacturing, textile, food processing, warehousing, logistics, construction, engineering, packaging and agriculture — nine sectors, one standard of supply.",
 };
 
 export default function IndustriesPage() {
@@ -15,7 +15,7 @@ export default function IndustriesPage() {
     <>
       <PageHero
         eyebrow="Industries we serve"
-        title="Ten sectors. One standard of supply."
+        title="Nine sectors. One standard of supply."
         lead="Every industry has its own standards, consumables and failure points. METTCO's sourcing adapts to each — the reliability doesn't change."
       />
 

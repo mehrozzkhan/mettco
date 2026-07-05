@@ -69,7 +69,10 @@
   }
 
   /* Dark industrial texture: micro-grid faded toward center + film grain.
-     Felt, not seen. Host element must be position: relative. */
+     Felt, not seen. */
+  .grid-texture {
+    position: relative;
+  }
   .grid-texture::before {
     content: "";
     position: absolute;

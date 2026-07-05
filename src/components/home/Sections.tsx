@@ -290,7 +290,7 @@ export function IndustriesSection() {
         <div className="flex flex-wrap items-end justify-between gap-8">
           <SectionHeader
             eyebrow="Industries we serve"
-            title="Ten sectors. One standard of supply."
+            title="Nine sectors. One standard of supply."
           />
           <Reveal delay={0.15}>
             <Button href="/industries" variant="ghost" className="text-azure">

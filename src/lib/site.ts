@@ -59,7 +59,6 @@ export const industries = [
   { name: "Logistics", slug: "logistics", icon: "Truck", blurb: "Equipment and consumables that keep supply chains moving." },
   { name: "Construction", slug: "construction", icon: "HardHat", blurb: "Engineering supplies, fasteners and site safety at project scale." },
   { name: "Engineering Firms", slug: "engineering", icon: "DraftingCompass", blurb: "Precision components and specialized technical sourcing." },
-  { name: "Pharmaceutical", slug: "pharmaceutical", icon: "Pill", blurb: "Cleanroom-ready equipment and validated material supply." },
   { name: "Packaging", slug: "packaging", icon: "Package", blurb: "Industrial packaging materials at consistent quality and scale." },
   { name: "Agriculture", slug: "agriculture", icon: "Wheat", blurb: "Durable equipment and inputs for modern agribusiness." },
 ];
@@ -91,7 +90,7 @@ export const processSteps = [
 ];
 
 export const stats = [
-  { value: "10+", label: "Industrial sectors served" },
+  { value: "9+", label: "Industrial sectors served" },
   { value: "6", label: "Core product categories" },
   { value: "2-Way", label: "Import & export capability" },
   { value: "24/7", label: "Sourcing coordination" },
