@@ -88,7 +88,7 @@ export function Header() {
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         overDark
           ? "bg-transparent"
-          : "border-b border-line bg-paper/90 backdrop-blur-xl"
+          : "border-b border-line bg-paper/95 backdrop-blur-md"
       )}
     >
       {/* Reading progress */}

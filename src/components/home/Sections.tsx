@@ -107,7 +107,7 @@ export function CapabilitiesSection() {
     <section className="grid-texture relative overflow-hidden bg-ink py-24 md:py-32">
       <div
         aria-hidden
-        className="pointer-events-none absolute right-[-15%] top-1/3 h-[520px] w-[520px] rounded-full bg-azure/[0.07] blur-[140px]"
+        className="pointer-events-none absolute right-[-20%] top-1/4 h-[760px] w-[760px] bg-[radial-gradient(closest-side,rgba(0,128,184,0.09),transparent_72%)]"
       />
       <div className="container-x relative">
         <SectionHeader

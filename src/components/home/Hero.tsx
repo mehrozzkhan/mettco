@@ -44,7 +44,7 @@ export function Hero() {
             : { opacity: [0.7, 1, 0.7], scale: [1, 1.08, 1] }
         }
         transition={{ duration: 11, repeat: Infinity, ease: "easeInOut" }}
-        className="pointer-events-none absolute -right-40 top-[-10%] h-[640px] w-[640px] rounded-full bg-azure/[0.13] blur-[140px]"
+        className="pointer-events-none absolute -right-64 top-[-20%] h-[900px] w-[900px] will-change-transform bg-[radial-gradient(closest-side,rgba(0,128,184,0.16),transparent_72%)]"
       />
       <motion.div
         aria-hidden
@@ -54,7 +54,7 @@ export function Hero() {
             : { opacity: [1, 0.6, 1], scale: [1, 1.06, 1] }
         }
         transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
-        className="pointer-events-none absolute -left-40 bottom-[-30%] h-[480px] w-[480px] rounded-full bg-azure-dark/[0.14] blur-[120px]"
+        className="pointer-events-none absolute -left-56 bottom-[-40%] h-[700px] w-[700px] will-change-transform bg-[radial-gradient(closest-side,rgba(0,97,141,0.17),transparent_72%)]"
       />
 
       {/* Globe wireframe — echoes the METTCO letterhead. Rotates slowly, drifts on scroll. */}
@@ -68,7 +68,7 @@ export function Hero() {
           fill="none"
           animate={reduce ? undefined : { rotate: 360 }}
           transition={{ duration: 240, repeat: Infinity, ease: "linear" }}
-          className="h-full w-full opacity-[0.16]"
+          className="h-full w-full opacity-[0.16] will-change-transform"
         >
           <circle cx="300" cy="300" r="298" stroke="#22A8DE" strokeWidth="0.8" />
           <ellipse cx="300" cy="300" rx="298" ry="120" stroke="#22A8DE" strokeWidth="0.7" />

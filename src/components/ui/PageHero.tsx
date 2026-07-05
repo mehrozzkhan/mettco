@@ -14,7 +14,7 @@ export function PageHero({ eyebrow, title, lead }: PageHeroProps) {
       {/* Ember glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -top-32 right-[-10%] h-[420px] w-[420px] rounded-full bg-azure/10 blur-[120px]"
+        className="pointer-events-none absolute -top-48 right-[-15%] h-[620px] w-[620px] bg-[radial-gradient(closest-side,rgba(0,128,184,0.13),transparent_72%)]"
       />
       <div className="container-x relative">
         <Reveal y={12}>
