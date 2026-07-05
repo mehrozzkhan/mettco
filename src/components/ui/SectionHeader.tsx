@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/motion/Reveal";
+import { GrowLine, SplitWords } from "@/components/motion/TextReveal";
 
 type SectionHeaderProps = {
   eyebrow: string;
@@ -19,35 +20,39 @@ export function SectionHeader({
   className,
 }: SectionHeaderProps) {
   return (
-    <Reveal
+    <div
       className={cn(
         "max-w-3xl",
         align === "center" && "mx-auto text-center",
         className
       )}
     >
-      <p className={cn("eyebrow", align === "center" && "justify-center")}>
-        <span className="h-px w-8 bg-azure" aria-hidden />
-        {eyebrow}
-      </p>
+      <Reveal y={12}>
+        <p className={cn("eyebrow", align === "center" && "justify-center")}>
+          <GrowLine className="h-px w-8 bg-azure" />
+          {eyebrow}
+        </p>
+      </Reveal>
       <h2
         className={cn(
           "mt-5 text-3xl font-semibold leading-[1.08] md:text-5xl",
           dark && "text-paper"
         )}
       >
-        {title}
+        <SplitWords text={title} delay={0.1} stagger={0.045} />
       </h2>
       {lead && (
-        <p
-          className={cn(
-            "mt-5 text-base leading-relaxed md:text-lg",
-            dark ? "text-steel-lighter" : "text-steel-light"
-          )}
-        >
-          {lead}
-        </p>
+        <Reveal delay={0.25} y={16}>
+          <p
+            className={cn(
+              "mt-5 text-base leading-relaxed md:text-lg",
+              dark ? "text-steel-lighter" : "text-steel-light"
+            )}
+          >
+            {lead}
+          </p>
+        </Reveal>
       )}
-    </Reveal>
+    </div>
   );
 }

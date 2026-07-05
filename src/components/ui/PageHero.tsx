@@ -1,4 +1,5 @@
 import { Reveal } from "@/components/motion/Reveal";
+import { SplitWords } from "@/components/motion/TextReveal";
 
 type PageHeroProps = {
   eyebrow: string;
@@ -13,23 +14,25 @@ export function PageHero({ eyebrow, title, lead }: PageHeroProps) {
       {/* Ember glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -top-32 right-[-10%] h-[420px] w-[420px] rounded-full bg-azure/15 blur-[120px]"
+        className="pointer-events-none absolute -top-32 right-[-10%] h-[420px] w-[420px] rounded-full bg-azure/10 blur-[120px]"
       />
       <div className="container-x relative">
-        <Reveal>
+        <Reveal y={12}>
           <p className="eyebrow">
             <span className="h-px w-8 bg-azure" aria-hidden />
             {eyebrow}
           </p>
-          <h1 className="mt-6 max-w-4xl text-4xl font-semibold leading-[1.05] text-paper md:text-6xl">
-            {title}
-          </h1>
-          {lead && (
+        </Reveal>
+        <h1 className="mt-6 max-w-4xl text-4xl font-semibold leading-[1.05] text-paper md:text-6xl">
+          <SplitWords mode="mount" text={title} delay={0.15} stagger={0.05} />
+        </h1>
+        {lead && (
+          <Reveal delay={0.35} y={16}>
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-steel-lighter md:text-lg">
               {lead}
             </p>
-          )}
-        </Reveal>
+          </Reveal>
+        )}
       </div>
     </section>
   );

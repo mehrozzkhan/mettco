@@ -3,7 +3,12 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { AnimatePresence, motion } from "framer-motion";
+import {
+  AnimatePresence,
+  motion,
+  useScroll,
+  useSpring,
+} from "framer-motion";
 import { ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
 import { primaryNav, company } from "@/lib/site";
 import { cn } from "@/lib/utils";
@@ -15,14 +20,16 @@ function Logo({ light }: { light?: boolean }) {
       className="group flex items-center gap-3"
       aria-label={`${company.name} — home`}
     >
-      <span
-        className={cn(
-          "grid h-10 w-10 place-items-center rounded-xl p-1 transition-transform duration-300 ease-out-expo group-hover:scale-105",
-          light ? "bg-white/95 shadow-elevated" : "bg-transparent"
-        )}
-      >
+      <span className="grid h-10 w-10 place-items-center transition-transform duration-300 ease-out-expo group-hover:scale-105">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/logo.png" alt="" className="h-full w-full object-contain" />
+        <img
+          src="/logo.png"
+          alt=""
+          className={cn(
+            "h-full w-full object-contain transition-[filter] duration-300",
+            light && "brightness-0 invert"
+          )}
+        />
       </span>
       <span className="flex flex-col leading-none">
         <span
@@ -52,6 +59,13 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
 
+  const { scrollYProgress } = useScroll();
+  const progress = useSpring(scrollYProgress, {
+    stiffness: 160,
+    damping: 30,
+    mass: 0.4,
+  });
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
@@ -77,6 +91,12 @@ export function Header() {
           : "border-b border-line bg-paper/90 backdrop-blur-xl"
       )}
     >
+      {/* Reading progress */}
+      <motion.span
+        aria-hidden
+        style={{ scaleX: progress }}
+        className="absolute inset-x-0 top-0 h-[2px] origin-left bg-gradient-to-r from-azure via-azure-light to-azure-soft"
+      />
       <div className="container-x flex h-[72px] items-center justify-between">
         <Logo light={overDark} />
 
@@ -171,7 +191,7 @@ export function Header() {
         <div className="hidden lg:block">
           <Link
             href="/request-a-quote"
-            className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-azure px-5 py-2.5 text-sm font-medium text-white transition-all duration-300 ease-out-expo hover:bg-azure-dark hover:shadow-elevated"
+            className="btn-shine inline-flex cursor-pointer items-center gap-2 rounded-full bg-azure px-5 py-2.5 text-sm font-medium text-white transition-all duration-300 ease-out-expo hover:bg-azure-dark hover:shadow-elevated"
           >
             Request a Quote
             <ArrowUpRight className="h-4 w-4" aria-hidden />

@@ -23,10 +23,10 @@ const config: Config = {
       colors: {
         // METTCO brand system — deep navy + cerulean (from brand logo)
         ink: {
-          DEFAULT: "#050D1A",
-          900: "#050D1A",
-          800: "#0A1626",
-          700: "#101F35",
+          DEFAULT: "#060709",
+          900: "#060709",
+          800: "#0C0E12",
+          700: "#13161C",
         },
         navy: {
           DEFAULT: "#0A2440",
@@ -50,7 +50,7 @@ const config: Config = {
         },
         line: {
           DEFAULT: "#DCE3EB",
-          dark: "#1B2C42",
+          dark: "#1E2229",
         },
       },
       fontFamily: {

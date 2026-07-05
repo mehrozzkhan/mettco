@@ -1,4 +1,3 @@
-import Link from "next/link";
 import {
   ArrowUpRight,
   Cog,
@@ -19,6 +18,8 @@ import {
 } from "@/lib/site";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/Reveal";
+import { SpotlightCard } from "@/components/motion/SpotlightCard";
+import { GrowLine } from "@/components/motion/TextReveal";
 import { Button } from "@/components/ui/Button";
 
 const categoryIcons: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -36,7 +37,7 @@ export function IndustriesStrip() {
   return (
     <section aria-label="Industries we serve" className="border-b border-line bg-paper-warm py-6">
       <div className="relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
-        <div className="flex w-max animate-marquee gap-12 whitespace-nowrap motion-reduce:animate-none">
+        <div className="flex w-max animate-marquee gap-12 whitespace-nowrap hover:[animation-play-state:paused] motion-reduce:animate-none">
           {items.map((ind, i) => (
             <span
               key={`${ind.slug}-${i}`}
@@ -74,10 +75,10 @@ export function CategoriesSection() {
           {productCategories.map((cat) => {
             const Icon = categoryIcons[cat.icon] ?? Cog;
             return (
-              <RevealItem key={cat.name}>
-                <Link
+              <RevealItem key={cat.name} className="h-full">
+                <SpotlightCard
                   href="/products"
-                  className="group flex h-full flex-col rounded-2xl border border-line bg-white p-8 transition-all duration-300 ease-out-expo hover:-translate-y-1 hover:border-azure/40 hover:shadow-elevated"
+                  className="flex h-full flex-col rounded-2xl border border-line bg-white p-8 transition-all duration-300 ease-out-expo hover:-translate-y-1 hover:border-azure/40 hover:shadow-elevated"
                 >
                   <span className="grid h-12 w-12 place-items-center rounded-xl bg-paper-warm text-navy transition-colors duration-300 group-hover:bg-azure group-hover:text-white">
                     <Icon className="h-6 w-6" aria-hidden />
@@ -90,7 +91,7 @@ export function CategoriesSection() {
                     Explore
                     <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden />
                   </span>
-                </Link>
+                </SpotlightCard>
               </RevealItem>
             );
           })}
@@ -106,7 +107,7 @@ export function CapabilitiesSection() {
     <section className="grid-texture relative overflow-hidden bg-ink py-24 md:py-32">
       <div
         aria-hidden
-        className="pointer-events-none absolute right-[-15%] top-1/3 h-[520px] w-[520px] rounded-full bg-azure/10 blur-[140px]"
+        className="pointer-events-none absolute right-[-15%] top-1/3 h-[520px] w-[520px] rounded-full bg-azure/[0.07] blur-[140px]"
       />
       <div className="container-x relative">
         <SectionHeader
@@ -118,8 +119,11 @@ export function CapabilitiesSection() {
 
         <RevealGroup className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-line-dark bg-line-dark md:grid-cols-2 lg:grid-cols-3">
           {capabilities.map((cap, i) => (
-            <RevealItem key={cap.title}>
-              <div className="group h-full bg-ink-800 p-8 transition-colors duration-300 hover:bg-ink-700">
+            <RevealItem key={cap.title} className="h-full">
+              <SpotlightCard
+                glow="rgba(34, 168, 222, 0.12)"
+                className="h-full bg-ink-800 p-8 transition-colors duration-300 hover:bg-ink-700"
+              >
                 <span className="font-display text-sm font-semibold text-azure">
                   {String(i + 1).padStart(2, "0")}
                 </span>
@@ -127,7 +131,7 @@ export function CapabilitiesSection() {
                 <p className="mt-2 text-sm leading-relaxed text-steel-lighter">
                   {cap.desc}
                 </p>
-              </div>
+              </SpotlightCard>
             </RevealItem>
           ))}
         </RevealGroup>
@@ -182,9 +186,9 @@ export function GlobalTradeSection() {
         <RevealGroup className="space-y-5">
           {pillars.map((p) => (
             <RevealItem key={p.title}>
-              <Link
+              <SpotlightCard
                 href={p.href}
-                className="group flex items-start gap-6 rounded-2xl border border-line bg-white p-8 transition-all duration-300 ease-out-expo hover:-translate-y-1 hover:border-azure/40 hover:shadow-elevated"
+                className="flex items-start gap-6 rounded-2xl border border-line bg-white p-8 transition-all duration-300 ease-out-expo hover:-translate-y-1 hover:border-azure/40 hover:shadow-elevated"
               >
                 <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-paper-warm text-navy transition-colors duration-300 group-hover:bg-azure group-hover:text-white">
                   <p.icon className="h-6 w-6" aria-hidden />
@@ -199,7 +203,7 @@ export function GlobalTradeSection() {
                   className="ml-auto mt-1 h-5 w-5 shrink-0 text-steel-lighter transition-all duration-300 group-hover:text-azure"
                   aria-hidden
                 />
-              </Link>
+              </SpotlightCard>
             </RevealItem>
           ))}
         </RevealGroup>
@@ -220,21 +224,28 @@ export function ProcessSection() {
           lead="A disciplined procurement workflow that turns your requirement into delivered, verified supply."
         />
 
-        <RevealGroup className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-5" stagger={0.1}>
-          {processSteps.map((step) => (
-            <RevealItem key={step.n}>
-              <div className="relative h-full rounded-2xl border border-line bg-white p-6">
-                <span className="font-display text-4xl font-semibold text-azure/25">
-                  {step.n}
-                </span>
-                <h3 className="mt-4 font-semibold">{step.title}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-steel-light">
-                  {step.desc}
-                </p>
-              </div>
-            </RevealItem>
-          ))}
-        </RevealGroup>
+        <div className="relative mt-16">
+          {/* Connector line drawing across the five steps */}
+          <GrowLine
+            delay={0.3}
+            className="absolute -top-8 left-0 hidden h-px w-full bg-gradient-to-r from-azure/60 via-azure/25 to-transparent lg:block"
+          />
+          <RevealGroup className="grid gap-5 sm:grid-cols-2 lg:grid-cols-5" stagger={0.1}>
+            {processSteps.map((step) => (
+              <RevealItem key={step.n} className="h-full">
+                <div className="group relative h-full rounded-2xl border border-line bg-white p-6 transition-all duration-300 ease-out-expo hover:-translate-y-1 hover:border-azure/40 hover:shadow-elevated">
+                  <span className="font-display text-4xl font-semibold text-azure/25 transition-colors duration-300 group-hover:text-azure">
+                    {step.n}
+                  </span>
+                  <h3 className="mt-4 font-semibold">{step.title}</h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-steel-light">
+                    {step.desc}
+                  </p>
+                </div>
+              </RevealItem>
+            ))}
+          </RevealGroup>
+        </div>
 
         <Reveal delay={0.25} className="mt-12 text-center">
           <Button href="/process">See the full process</Button>
@@ -263,17 +274,17 @@ export function IndustriesSection() {
 
         <RevealGroup className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-5" stagger={0.05}>
           {industries.map((ind) => (
-            <RevealItem key={ind.slug}>
-              <Link
+            <RevealItem key={ind.slug} className="h-full">
+              <SpotlightCard
                 href="/industries"
-                className="group flex h-full min-h-[132px] flex-col justify-between bg-white p-6 transition-colors duration-300 hover:bg-paper-warm"
+                className="flex h-full min-h-[132px] flex-col justify-between bg-white p-6 transition-colors duration-300 hover:bg-paper-warm"
               >
                 <h3 className="text-base font-semibold">{ind.name}</h3>
                 <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-[0.14em] text-steel-lighter transition-colors duration-300 group-hover:text-azure">
                   View sector
                   <ArrowUpRight className="h-3.5 w-3.5" aria-hidden />
                 </span>
-              </Link>
+              </SpotlightCard>
             </RevealItem>
           ))}
         </RevealGroup>

@@ -3,6 +3,7 @@ import { Inter, Space_Grotesk } from "next/font/google";
 import { company } from "@/lib/site";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { SmoothScroll } from "@/components/motion/SmoothScroll";
 import "./globals.css";
 
 const inter = Inter({
@@ -53,6 +54,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <body>
+        <SmoothScroll />
         <Header />
         <main>{children}</main>
         <Footer />
