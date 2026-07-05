@@ -1,13 +1,21 @@
 import {
   ArrowUpRight,
   Cog,
+  DraftingCompass,
   Droplets,
+  Factory,
   Globe2,
   HardHat,
   Handshake,
   Package,
+  Pill,
   ShieldCheck,
+  Shirt,
   Target,
+  Truck,
+  UtensilsCrossed,
+  Warehouse,
+  Wheat,
   Wrench,
 } from "lucide-react";
 import {
@@ -31,6 +39,19 @@ const categoryIcons: Record<string, React.ComponentType<{ className?: string }>>
   Target,
 };
 
+const industryIcons: Record<string, React.ComponentType<{ className?: string }>> = {
+  Factory,
+  Shirt,
+  UtensilsCrossed,
+  Warehouse,
+  Truck,
+  HardHat,
+  DraftingCompass,
+  Pill,
+  Package,
+  Wheat,
+};
+
 /* ── Industries marquee ─────────────────────────────────────────── */
 export function IndustriesStrip() {
   const items = [...industries, ...industries]; // duplicated for seamless loop
@@ -38,15 +59,21 @@ export function IndustriesStrip() {
     <section aria-label="Industries we serve" className="border-b border-line bg-paper-warm py-6">
       <div className="relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
         <div className="flex w-max animate-marquee gap-12 whitespace-nowrap hover:[animation-play-state:paused] motion-reduce:animate-none">
-          {items.map((ind, i) => (
-            <span
-              key={`${ind.slug}-${i}`}
-              className="flex items-center gap-12 text-sm font-medium uppercase tracking-[0.18em] text-steel-light"
-            >
-              {ind.name}
-              <span className="h-1 w-1 rounded-full bg-azure" aria-hidden />
-            </span>
-          ))}
+          {items.map((ind, i) => {
+            const Icon = industryIcons[ind.icon] ?? Factory;
+            return (
+              <span
+                key={`${ind.slug}-${i}`}
+                className="flex items-center gap-12 text-sm font-medium uppercase tracking-[0.18em] text-steel-light"
+              >
+                <span className="flex items-center gap-3">
+                  <Icon className="h-[18px] w-[18px] text-azure" aria-hidden />
+                  {ind.name}
+                </span>
+                <span className="h-1 w-1 rounded-full bg-azure/50" aria-hidden />
+              </span>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -273,20 +300,29 @@ export function IndustriesSection() {
         </div>
 
         <RevealGroup className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-5" stagger={0.05}>
-          {industries.map((ind) => (
+          {industries.map((ind) => {
+            const Icon = industryIcons[ind.icon] ?? Factory;
+            return (
             <RevealItem key={ind.slug} className="h-full">
               <SpotlightCard
                 href="/industries"
-                className="flex h-full min-h-[132px] flex-col justify-between bg-white p-6 transition-colors duration-300 hover:bg-paper-warm"
+                className="flex h-full min-h-[148px] flex-col justify-between bg-white p-6 transition-colors duration-300 hover:bg-paper-warm"
               >
-                <h3 className="text-base font-semibold">{ind.name}</h3>
+                <span className="flex items-start justify-between gap-3">
+                  <h3 className="text-base font-semibold">{ind.name}</h3>
+                  <Icon
+                    className="h-5 w-5 shrink-0 text-steel-lighter transition-colors duration-300 group-hover:text-azure"
+                    aria-hidden
+                  />
+                </span>
                 <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-[0.14em] text-steel-lighter transition-colors duration-300 group-hover:text-azure">
                   View sector
                   <ArrowUpRight className="h-3.5 w-3.5" aria-hidden />
                 </span>
               </SpotlightCard>
             </RevealItem>
-          ))}
+            );
+          })}
         </RevealGroup>
       </div>
     </section>

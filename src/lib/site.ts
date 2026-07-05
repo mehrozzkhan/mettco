@@ -52,16 +52,16 @@ export const primaryNav: NavItem[] = [
 ];
 
 export const industries = [
-  { name: "Manufacturing", slug: "manufacturing", blurb: "Reliable MRO and production supply for plants running around the clock." },
-  { name: "Textile Mills", slug: "textile", blurb: "Spare parts, consumables and machinery components for spinning & weaving." },
-  { name: "Food Processing", slug: "food-processing", blurb: "Hygienic, compliant equipment and packaging for food-grade operations." },
-  { name: "Warehousing", slug: "warehousing", blurb: "Handling, storage and safety systems for high-throughput facilities." },
-  { name: "Logistics", slug: "logistics", blurb: "Equipment and consumables that keep supply chains moving." },
-  { name: "Construction", slug: "construction", blurb: "Engineering supplies, fasteners and site safety at project scale." },
-  { name: "Engineering Firms", slug: "engineering", blurb: "Precision components and specialized technical sourcing." },
-  { name: "Pharmaceutical", slug: "pharmaceutical", blurb: "Cleanroom-ready equipment and validated material supply." },
-  { name: "Packaging", slug: "packaging", blurb: "Industrial packaging materials at consistent quality and scale." },
-  { name: "Agriculture", slug: "agriculture", blurb: "Durable equipment and inputs for modern agribusiness." },
+  { name: "Manufacturing", slug: "manufacturing", icon: "Factory", blurb: "Reliable MRO and production supply for plants running around the clock." },
+  { name: "Textile Mills", slug: "textile", icon: "Shirt", blurb: "Spare parts, consumables and machinery components for spinning & weaving." },
+  { name: "Food Processing", slug: "food-processing", icon: "UtensilsCrossed", blurb: "Hygienic, compliant equipment and packaging for food-grade operations." },
+  { name: "Warehousing", slug: "warehousing", icon: "Warehouse", blurb: "Handling, storage and safety systems for high-throughput facilities." },
+  { name: "Logistics", slug: "logistics", icon: "Truck", blurb: "Equipment and consumables that keep supply chains moving." },
+  { name: "Construction", slug: "construction", icon: "HardHat", blurb: "Engineering supplies, fasteners and site safety at project scale." },
+  { name: "Engineering Firms", slug: "engineering", icon: "DraftingCompass", blurb: "Precision components and specialized technical sourcing." },
+  { name: "Pharmaceutical", slug: "pharmaceutical", icon: "Pill", blurb: "Cleanroom-ready equipment and validated material supply." },
+  { name: "Packaging", slug: "packaging", icon: "Package", blurb: "Industrial packaging materials at consistent quality and scale." },
+  { name: "Agriculture", slug: "agriculture", icon: "Wheat", blurb: "Durable equipment and inputs for modern agribusiness." },
 ];
 
 export const productCategories = [
