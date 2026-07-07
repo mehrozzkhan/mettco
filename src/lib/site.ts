@@ -52,15 +52,15 @@ export const primaryNav: NavItem[] = [
 ];
 
 export const industries = [
-  { name: "Manufacturing", slug: "manufacturing", icon: "Factory", blurb: "Reliable MRO and production supply for plants running around the clock.", supplies: ["Bearings & power transmission", "Motors, drives & pumps", "MRO consumables & lubricants", "Machine spares & tooling"] },
-  { name: "Textile Mills", slug: "textile", icon: "Shirt", blurb: "Spare parts, consumables and machinery components for spinning & weaving.", supplies: ["Ring frame & loom spares", "Rollers, aprons & cots", "Compressed air components", "Humidification & filtration"] },
-  { name: "Food Processing", slug: "food-processing", icon: "UtensilsCrossed", blurb: "Hygienic, compliant equipment and packaging for food-grade operations.", supplies: ["Food-grade conveyor components", "Stainless fittings & valves", "Hygienic lubricants", "Primary & secondary packaging"] },
-  { name: "Warehousing", slug: "warehousing", icon: "Warehouse", blurb: "Handling, storage and safety systems for high-throughput facilities.", supplies: ["Racking & storage systems", "Material handling equipment", "Dock & door hardware", "Safety barriers & signage"] },
-  { name: "Logistics", slug: "logistics", icon: "Truck", blurb: "Equipment and consumables that keep supply chains moving.", supplies: ["Strapping & load securing", "Pallets & containers", "Fleet consumables", "Warehouse packaging lines"] },
-  { name: "Construction", slug: "construction", icon: "HardHat", blurb: "Engineering supplies, fasteners and site safety at project scale.", supplies: ["Fasteners & anchors", "Site safety & PPE", "Formwork accessories", "Power tools & consumables"] },
-  { name: "Engineering Firms", slug: "engineering", icon: "DraftingCompass", blurb: "Precision components and specialized technical sourcing.", supplies: ["Precision components to spec", "Instrumentation & measurement", "Custom machined parts", "Obsolete part re-sourcing"] },
-  { name: "Packaging", slug: "packaging", icon: "Package", blurb: "Industrial packaging materials at consistent quality and scale.", supplies: ["Stretch film & shrink wrap", "Strapping systems", "Corrugated & cartons", "Protective packaging"] },
-  { name: "Agriculture", slug: "agriculture", icon: "Wheat", blurb: "Durable equipment and inputs for modern agribusiness.", supplies: ["Irrigation components", "Processing machinery spares", "Storage & handling", "Crop packaging materials"] },
+  { name: "Manufacturing", slug: "manufacturing", icon: "Factory", image: "/images/industries/manufacturing.jpg", blurb: "Reliable MRO and production supply for plants running around the clock.", supplies: ["Bearings & power transmission", "Motors, drives & pumps", "MRO consumables & lubricants", "Machine spares & tooling"] },
+  { name: "Textile Mills", slug: "textile", icon: "Shirt", image: "/images/industries/textile.jpg", blurb: "Spare parts, consumables and machinery components for spinning & weaving.", supplies: ["Ring frame & loom spares", "Rollers, aprons & cots", "Compressed air components", "Humidification & filtration"] },
+  { name: "Food Processing", slug: "food-processing", icon: "UtensilsCrossed", image: "/images/industries/food-processing.jpg", blurb: "Hygienic, compliant equipment and packaging for food-grade operations.", supplies: ["Food-grade conveyor components", "Stainless fittings & valves", "Hygienic lubricants", "Primary & secondary packaging"] },
+  { name: "Warehousing", slug: "warehousing", icon: "Warehouse", image: "/images/industries/warehousing.jpg", blurb: "Handling, storage and safety systems for high-throughput facilities.", supplies: ["Racking & storage systems", "Material handling equipment", "Dock & door hardware", "Safety barriers & signage"] },
+  { name: "Logistics", slug: "logistics", icon: "Truck", image: "/images/industries/logistics.jpg", blurb: "Equipment and consumables that keep supply chains moving.", supplies: ["Strapping & load securing", "Pallets & containers", "Fleet consumables", "Warehouse packaging lines"] },
+  { name: "Construction", slug: "construction", icon: "HardHat", image: "/images/industries/construction.jpg", blurb: "Engineering supplies, fasteners and site safety at project scale.", supplies: ["Fasteners & anchors", "Site safety & PPE", "Formwork accessories", "Power tools & consumables"] },
+  { name: "Engineering Firms", slug: "engineering", icon: "DraftingCompass", image: "/images/industries/engineering.png", blurb: "Precision components and specialized technical sourcing.", supplies: ["Precision components to spec", "Instrumentation & measurement", "Custom machined parts", "Obsolete part re-sourcing"] },
+  { name: "Packaging", slug: "packaging", icon: "Package", image: "/images/industries/packaging.png", blurb: "Industrial packaging materials at consistent quality and scale.", supplies: ["Stretch film & shrink wrap", "Strapping systems", "Corrugated & cartons", "Protective packaging"] },
+  { name: "Agriculture", slug: "agriculture", icon: "Wheat", image: "/images/industries/agriculture.png", blurb: "Durable equipment and inputs for modern agribusiness.", supplies: ["Irrigation components", "Processing machinery spares", "Storage & handling", "Crop packaging materials"] },
 ];
 
 export const productCategories = [
@@ -223,9 +223,32 @@ export const trustPoints = [
   "Pre-shipment inspection",
 ];
 
+// ⚠️ PLACEHOLDER CREDIBILITY FIGURES — replace with real numbers before
+// marketing pushes. Each slot: years operating / suppliers vetted /
+// orders fulfilled / sectors served.
 export const stats = [
-  { value: "9+", label: "Industrial sectors served" },
-  { value: "6", label: "Core product categories" },
-  { value: "2-Way", label: "Import & export capability" },
-  { value: "24/7", label: "Sourcing coordination" },
+  { value: "3+", label: "Years operating" }, // TODO: real founding year math
+  { value: "40+", label: "Suppliers vetted" }, // TODO: real count
+  { value: "150+", label: "Orders fulfilled" }, // TODO: real count
+  { value: "9", label: "Sectors served" },
 ];
+
+// ⚠️ PLACEHOLDER PARTNER/ACCREDITATION WORDMARKS — replace labels with real
+// client names, chamber memberships or certifications as they're secured.
+export const partnerSlots = [
+  "Client Wordmark",
+  "Client Wordmark",
+  "Chamber Membership",
+  "Certification",
+  "Client Wordmark",
+  "Supplier Partner",
+];
+
+// ⚠️ PLACEHOLDER TESTIMONIAL — swap for a real quote when available.
+export const testimonial = {
+  quote:
+    "They found a discontinued drive coupling that three other suppliers told us was impossible. It was on our floor in twelve days, with certificates. METTCO is now our first call for anything hard to find.",
+  name: "Procurement Manager",
+  role: "Plant Operations",
+  company: "Textile group, Punjab",
+};
