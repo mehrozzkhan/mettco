@@ -27,11 +27,11 @@ export default function ProcessPage() {
         lead="Procurement fails in the gaps — between what was specified, what was sourced and what arrived. Our five-step process closes every gap."
       />
 
-      <section className="bg-paper py-24 md:py-32">
+      <section className="bg-ink py-24 md:py-32">
         <div className="container-x space-y-6">
           {processSteps.map((step, i) => (
             <Reveal key={step.n} delay={i * 0.05}>
-              <div className="grid gap-8 rounded-2xl border border-line bg-white p-8 md:grid-cols-[120px_1fr_1.2fr] md:p-12">
+              <div className="grid gap-8 rounded-2xl border border-line bg-ink-800 p-8 md:grid-cols-[120px_1fr_1.2fr] md:p-12">
                 <span className="font-display text-6xl font-semibold text-azure/25 md:text-7xl">
                   {step.n}
                 </span>
@@ -53,7 +53,7 @@ export default function ProcessPage() {
         </div>
       </section>
 
-      <section className="border-t border-line bg-paper-warm py-24 md:py-28">
+      <section className="border-t border-line bg-ink-700 py-24 md:py-28">
         <div className="container-x text-center">
           <SectionHeader
             align="center"

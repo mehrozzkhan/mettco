@@ -17,7 +17,7 @@ export function Reveal({
   children,
   delay = 0,
   className,
-  y = 24,
+  y = 20,
   as = "div",
 }: RevealProps) {
   const reduce = useReducedMotion();
@@ -28,7 +28,7 @@ export function Reveal({
       initial={reduce ? false : { opacity: 0, y }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] }}
       className={cn(className)}
     >
       {children}
@@ -67,7 +67,7 @@ export function RevealGroup({
 export function RevealItem({
   children,
   className,
-  y = 24,
+  y = 20,
 }: {
   children: React.ReactNode;
   className?: string;
@@ -80,7 +80,7 @@ export function RevealItem({
         show: {
           opacity: 1,
           y: 0,
-          transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
+          transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
         },
       }}
       className={className}

@@ -36,12 +36,12 @@ export default function WhyPage() {
         lead="Anyone can quote a price. Reliability at specification, at scale, across borders — that takes a system. Ours is built on six advantages."
       />
 
-      <section className="bg-paper py-24 md:py-32">
+      <section className="bg-ink py-24 md:py-32">
         <div className="container-x">
           <RevealGroup className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {reasons.map((r, i) => (
               <RevealItem key={r.title}>
-                <div className="h-full rounded-2xl border border-line bg-white p-8 transition-all duration-300 ease-out-expo hover:-translate-y-1 hover:border-azure/40 hover:shadow-elevated">
+                <div className="h-full rounded-2xl border border-line bg-ink-800 p-8 transition-all duration-300 ease-out-expo hover:-translate-y-1 hover:border-azure/40 hover:shadow-elevated">
                   <span className="font-display text-4xl font-semibold text-azure/25">
                     {String(i + 1).padStart(2, "0")}
                   </span>
@@ -75,7 +75,7 @@ export default function WhyPage() {
         </div>
       </section>
 
-      <section className="bg-paper py-24 text-center md:py-28">
+      <section className="bg-ink py-24 text-center md:py-28">
         <div className="container-x">
           <Reveal>
             <h2 className="mx-auto max-w-2xl text-3xl font-semibold md:text-4xl">

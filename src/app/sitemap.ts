@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { company } from "@/lib/site";
+import { company, industries } from "@/lib/site";
 
 const routes = [
   "",
@@ -19,7 +19,11 @@ const routes = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return routes.map((route) => ({
+  const all = [
+    ...routes,
+    ...industries.map((i) => `/industries/${i.slug}`),
+  ];
+  return all.map((route) => ({
     url: `https://${company.domain}${route}`,
     lastModified: new Date(),
     changeFrequency: "monthly",

@@ -32,7 +32,7 @@ export default function GlobalSourcingPage() {
         lead="METTCO's sourcing networks span local and international markets — so your procurement is benchmarked globally and delivered locally."
       />
 
-      <section className="bg-paper py-24 md:py-32">
+      <section className="bg-ink py-24 md:py-32">
         <div className="container-x">
           <SectionHeader
             eyebrow="Network coverage"
@@ -41,7 +41,7 @@ export default function GlobalSourcingPage() {
           <RevealGroup className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
             {network.map((n) => (
               <RevealItem key={n.region}>
-                <div className="h-full rounded-2xl border border-line bg-white p-8">
+                <div className="h-full rounded-2xl border border-line bg-ink-800 p-8">
                   <MapPin className="h-6 w-6 text-azure" aria-hidden />
                   <h3 className="mt-5 text-lg font-semibold">{n.region}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-steel-light">{n.desc}</p>
@@ -73,7 +73,7 @@ export default function GlobalSourcingPage() {
         </div>
       </section>
 
-      <section className="bg-paper py-24 text-center md:py-28">
+      <section className="bg-ink py-24 text-center md:py-28">
         <div className="container-x">
           <Reveal>
             <h2 className="mx-auto max-w-2xl text-3xl font-semibold md:text-4xl">

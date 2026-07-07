@@ -30,12 +30,17 @@
   }
 
   body {
-    @apply bg-paper text-navy font-sans antialiased;
+    @apply bg-ink text-steel font-sans antialiased;
     font-feature-settings: "ss01", "cv01", "cv03";
   }
 
   ::selection {
-    @apply bg-azure text-white;
+    @apply bg-azure text-ink;
+  }
+
+  /* Visible keyboard focus, site-wide */
+  :focus-visible {
+    @apply outline-none ring-2 ring-azure ring-offset-2 ring-offset-ink;
   }
 
   h1, h2, h3, h4, h5 {
@@ -49,19 +54,19 @@
     height: 10px;
   }
   ::-webkit-scrollbar-track {
-    @apply bg-paper-warm;
+    @apply bg-ink-800;
   }
   ::-webkit-scrollbar-thumb {
-    @apply bg-steel-lighter rounded-full;
+    @apply bg-line rounded-full;
   }
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-steel;
+    @apply bg-steel-muted;
   }
 }
 
 @layer components {
   .eyebrow {
-    @apply inline-flex items-center gap-2 text-2xs font-semibold uppercase tracking-[0.18em] text-azure;
+    @apply inline-flex items-center gap-2 font-mono text-2xs font-medium uppercase tracking-[0.18em] text-azure;
   }
 
   .container-x {
@@ -114,6 +119,14 @@
   }
   .btn-shine:hover::after {
     transform: translateX(110%);
+  }
+
+  /* Restrained glassmorphism — translucent surface + light border for depth */
+  .glass {
+    @apply border border-white/[0.07] bg-white/[0.03];
+  }
+  .glass-blur {
+    @apply border border-white/[0.08] bg-white/[0.05] backdrop-blur-md;
   }
 
   .link-underline {

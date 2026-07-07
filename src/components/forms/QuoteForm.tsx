@@ -6,7 +6,7 @@ import { company, industries, productCategories } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 const inputCls =
-  "w-full rounded-xl border border-line bg-white px-4 py-3.5 text-sm text-navy placeholder:text-steel-lighter transition-colors duration-200 focus:border-azure focus:outline-none focus:ring-2 focus:ring-azure/20";
+  "w-full rounded-xl border border-line bg-ink-800 px-4 py-3.5 text-sm text-navy placeholder:text-steel-lighter transition-colors duration-200 focus:border-azure focus:outline-none focus:ring-2 focus:ring-azure/20";
 
 const labelCls = "mb-2 block text-sm font-medium text-navy";
 
@@ -42,7 +42,7 @@ export function QuoteForm({ compact = false }: { compact?: boolean }) {
 
   if (sent) {
     return (
-      <div className="rounded-2xl border border-line bg-white p-10 text-center md:p-14">
+      <div className="rounded-2xl border border-line bg-ink-800 p-10 text-center md:p-14">
         <CheckCircle2 className="mx-auto h-12 w-12 text-azure" aria-hidden />
         <h3 className="mt-5 text-2xl font-semibold">Almost there</h3>
         <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-steel-light">
@@ -67,7 +67,7 @@ export function QuoteForm({ compact = false }: { compact?: boolean }) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-2xl border border-line bg-white p-8 md:p-12"
+      className="rounded-2xl border border-line bg-ink-800 p-8 md:p-12"
       noValidate={false}
     >
       <div className={cn("grid gap-6", !compact && "md:grid-cols-2")}>

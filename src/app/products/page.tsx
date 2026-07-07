@@ -33,15 +33,15 @@ export default function ProductsPage() {
         lead="If your operation consumes it, wears it, runs on it or ships in it — it's likely within one of these categories. And if it isn't, that's what Specialized Solutions is for."
       />
 
-      <section className="bg-paper py-24 md:py-32">
+      <section className="bg-ink py-24 md:py-32">
         <div className="container-x space-y-6">
           {productCategories.map((cat, i) => {
             const Icon = icons[cat.icon] ?? Cog;
             return (
               <Reveal key={cat.name} delay={i * 0.04}>
-                <div className="grid gap-8 rounded-2xl border border-line bg-white p-8 md:grid-cols-[1fr_1.4fr] md:p-12">
+                <div className="grid gap-8 rounded-2xl border border-line bg-ink-800 p-8 md:grid-cols-[1fr_1.4fr] md:p-12">
                   <div>
-                    <span className="grid h-14 w-14 place-items-center rounded-xl bg-paper-warm text-navy">
+                    <span className="grid h-14 w-14 place-items-center rounded-xl bg-ink-700 text-navy">
                       <Icon className="h-7 w-7" aria-hidden />
                     </span>
                     <h2 className="mt-6 text-2xl font-semibold md:text-3xl">{cat.name}</h2>
@@ -49,7 +49,7 @@ export default function ProductsPage() {
                   </div>
                   <ul className="grid content-center gap-3 sm:grid-cols-2">
                     {examples[cat.name]?.map((e) => (
-                      <li key={e} className="flex items-start gap-2.5 rounded-lg bg-paper px-4 py-3 text-sm text-steel">
+                      <li key={e} className="flex items-start gap-2.5 rounded-lg bg-ink px-4 py-3 text-sm text-steel">
                         <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-azure" aria-hidden />
                         {e}
                       </li>
@@ -62,7 +62,7 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      <section className="border-t border-line bg-paper-warm py-24 md:py-28">
+      <section className="border-t border-line bg-ink-700 py-24 md:py-28">
         <div className="container-x text-center">
           <SectionHeader
             align="center"

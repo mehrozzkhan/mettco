@@ -25,7 +25,7 @@ export default function VisionPage() {
         lead="METTCO isn't designed around a single product. It's designed around a capability — moving industrial goods reliably between markets — and that capability scales worldwide."
       />
 
-      <section className="bg-paper py-24 md:py-32">
+      <section className="bg-ink py-24 md:py-32">
         <div className="container-x">
           <SectionHeader
             eyebrow="Three horizons"
@@ -34,9 +34,9 @@ export default function VisionPage() {
           <RevealGroup className="mt-14 grid gap-5 lg:grid-cols-3">
             {horizons.map((h) => (
               <RevealItem key={h.phase}>
-                <div className="flex h-full flex-col rounded-2xl border border-line bg-white p-8 md:p-10">
+                <div className="flex h-full flex-col rounded-2xl border border-line bg-ink-800 p-8 md:p-10">
                   <div className="flex items-center justify-between">
-                    <span className="grid h-12 w-12 place-items-center rounded-xl bg-paper-warm text-navy">
+                    <span className="grid h-12 w-12 place-items-center rounded-xl bg-ink-700 text-navy">
                       <h.icon className="h-6 w-6" aria-hidden />
                     </span>
                     <span className="eyebrow">{h.phase}</span>
@@ -72,7 +72,7 @@ export default function VisionPage() {
         </div>
       </section>
 
-      <section className="bg-paper py-24 text-center md:py-28">
+      <section className="bg-ink py-24 text-center md:py-28">
         <div className="container-x">
           <Reveal>
             <h2 className="mx-auto max-w-2xl text-3xl font-semibold md:text-4xl">

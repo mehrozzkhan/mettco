@@ -26,13 +26,13 @@ export default function BusinessDevelopmentPage() {
         lead="METTCO grows through partnerships — with manufacturers, buyers, suppliers and service partners. If our capabilities complement yours, let's talk."
       />
 
-      <section className="bg-paper py-24 md:py-32">
+      <section className="bg-ink py-24 md:py-32">
         <div className="container-x">
           <RevealGroup className="grid gap-5 md:grid-cols-2">
             {tracks.map((t) => (
               <RevealItem key={t.title}>
-                <div className="flex h-full flex-col rounded-2xl border border-line bg-white p-8 md:p-10">
-                  <span className="grid h-12 w-12 place-items-center rounded-xl bg-paper-warm text-navy">
+                <div className="flex h-full flex-col rounded-2xl border border-line bg-ink-800 p-8 md:p-10">
+                  <span className="grid h-12 w-12 place-items-center rounded-xl bg-ink-700 text-navy">
                     <t.icon className="h-6 w-6" aria-hidden />
                   </span>
                   <h2 className="mt-6 text-xl font-semibold">{t.title}</h2>

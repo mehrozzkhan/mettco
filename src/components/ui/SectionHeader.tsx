@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/motion/Reveal";
-import { GrowLine, SplitWords } from "@/components/motion/TextReveal";
+import { GrowLine } from "@/components/motion/TextReveal";
 
 type SectionHeaderProps = {
   eyebrow: string;
@@ -33,14 +33,16 @@ export function SectionHeader({
           {eyebrow}
         </p>
       </Reveal>
-      <h2
-        className={cn(
-          "mt-5 text-3xl font-semibold leading-[1.08] md:text-5xl",
-          dark && "text-paper"
-        )}
-      >
-        <SplitWords text={title} delay={0.1} stagger={0.045} />
-      </h2>
+      <Reveal delay={0.08} y={20}>
+        <h2
+          className={cn(
+            "mt-5 text-3xl font-semibold leading-[1.08] md:text-5xl",
+            dark && "text-paper"
+          )}
+        >
+          {title}
+        </h2>
+      </Reveal>
       {lead && (
         <Reveal delay={0.25} y={16}>
           <p

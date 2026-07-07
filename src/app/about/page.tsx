@@ -26,7 +26,7 @@ export default function AboutPage() {
         lead={`${company.legalName} is a B2B industrial trading, sourcing and engineering company based in ${company.country} — connecting businesses with reliable products through trusted local and international supply networks.`}
       />
 
-      <section className="bg-paper py-24 md:py-32">
+      <section className="bg-ink py-24 md:py-32">
         <div className="container-x grid gap-14 lg:grid-cols-2">
           <SectionHeader
             eyebrow="Who we are"
@@ -77,9 +77,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-paper py-24 md:py-32">
+      <section className="bg-ink py-24 md:py-32">
         <div className="container-x">
-          <div className="grid gap-10 rounded-2xl border border-line bg-white p-10 md:grid-cols-4 md:p-14">
+          <div className="grid gap-10 rounded-2xl border border-line bg-ink-800 p-10 md:grid-cols-4 md:p-14">
             {stats.map((s) => (
               <Reveal key={s.label}>
                 <p className="font-display text-4xl font-semibold text-navy md:text-5xl">{s.value}</p>

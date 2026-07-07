@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import { company } from "@/lib/site";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -19,6 +19,13 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap",
 });
 
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  weight: ["400", "500", "600"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL(`https://${company.domain}`),
   title: {
@@ -26,6 +33,7 @@ export const metadata: Metadata = {
     template: `%s | ${company.name}`,
   },
   description: company.descriptionShort,
+  alternates: { canonical: "./" },
   keywords: [
     "industrial trading",
     "industrial sourcing",
@@ -46,14 +54,57 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `https://${company.domain}/#organization`,
+      name: company.name,
+      legalName: company.legalName,
+      url: `https://${company.domain}`,
+      logo: `https://${company.domain}/logo.png`,
+      email: company.email,
+      telephone: company.phone,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "42-P Izmir Town",
+        addressLocality: "Lahore",
+        addressCountry: "PK",
+      },
+      description: company.descriptionShort,
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": `https://${company.domain}/#localbusiness`,
+      name: company.name,
+      image: `https://${company.domain}/logo.png`,
+      url: `https://${company.domain}`,
+      email: company.email,
+      telephone: company.phone,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "42-P Izmir Town",
+        addressLocality: "Lahore",
+        addressCountry: "PK",
+      },
+      parentOrganization: { "@id": `https://${company.domain}/#organization` },
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
+    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <SmoothScroll />
         <Header />
         <main>{children}</main>

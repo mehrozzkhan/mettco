@@ -52,15 +52,15 @@ export const primaryNav: NavItem[] = [
 ];
 
 export const industries = [
-  { name: "Manufacturing", slug: "manufacturing", icon: "Factory", blurb: "Reliable MRO and production supply for plants running around the clock." },
-  { name: "Textile Mills", slug: "textile", icon: "Shirt", blurb: "Spare parts, consumables and machinery components for spinning & weaving." },
-  { name: "Food Processing", slug: "food-processing", icon: "UtensilsCrossed", blurb: "Hygienic, compliant equipment and packaging for food-grade operations." },
-  { name: "Warehousing", slug: "warehousing", icon: "Warehouse", blurb: "Handling, storage and safety systems for high-throughput facilities." },
-  { name: "Logistics", slug: "logistics", icon: "Truck", blurb: "Equipment and consumables that keep supply chains moving." },
-  { name: "Construction", slug: "construction", icon: "HardHat", blurb: "Engineering supplies, fasteners and site safety at project scale." },
-  { name: "Engineering Firms", slug: "engineering", icon: "DraftingCompass", blurb: "Precision components and specialized technical sourcing." },
-  { name: "Packaging", slug: "packaging", icon: "Package", blurb: "Industrial packaging materials at consistent quality and scale." },
-  { name: "Agriculture", slug: "agriculture", icon: "Wheat", blurb: "Durable equipment and inputs for modern agribusiness." },
+  { name: "Manufacturing", slug: "manufacturing", icon: "Factory", blurb: "Reliable MRO and production supply for plants running around the clock.", supplies: ["Bearings & power transmission", "Motors, drives & pumps", "MRO consumables & lubricants", "Machine spares & tooling"] },
+  { name: "Textile Mills", slug: "textile", icon: "Shirt", blurb: "Spare parts, consumables and machinery components for spinning & weaving.", supplies: ["Ring frame & loom spares", "Rollers, aprons & cots", "Compressed air components", "Humidification & filtration"] },
+  { name: "Food Processing", slug: "food-processing", icon: "UtensilsCrossed", blurb: "Hygienic, compliant equipment and packaging for food-grade operations.", supplies: ["Food-grade conveyor components", "Stainless fittings & valves", "Hygienic lubricants", "Primary & secondary packaging"] },
+  { name: "Warehousing", slug: "warehousing", icon: "Warehouse", blurb: "Handling, storage and safety systems for high-throughput facilities.", supplies: ["Racking & storage systems", "Material handling equipment", "Dock & door hardware", "Safety barriers & signage"] },
+  { name: "Logistics", slug: "logistics", icon: "Truck", blurb: "Equipment and consumables that keep supply chains moving.", supplies: ["Strapping & load securing", "Pallets & containers", "Fleet consumables", "Warehouse packaging lines"] },
+  { name: "Construction", slug: "construction", icon: "HardHat", blurb: "Engineering supplies, fasteners and site safety at project scale.", supplies: ["Fasteners & anchors", "Site safety & PPE", "Formwork accessories", "Power tools & consumables"] },
+  { name: "Engineering Firms", slug: "engineering", icon: "DraftingCompass", blurb: "Precision components and specialized technical sourcing.", supplies: ["Precision components to spec", "Instrumentation & measurement", "Custom machined parts", "Obsolete part re-sourcing"] },
+  { name: "Packaging", slug: "packaging", icon: "Package", blurb: "Industrial packaging materials at consistent quality and scale.", supplies: ["Stretch film & shrink wrap", "Strapping systems", "Corrugated & cartons", "Protective packaging"] },
+  { name: "Agriculture", slug: "agriculture", icon: "Wheat", blurb: "Durable equipment and inputs for modern agribusiness.", supplies: ["Irrigation components", "Processing machinery spares", "Storage & handling", "Crop packaging materials"] },
 ];
 
 export const productCategories = [
@@ -87,6 +87,140 @@ export const processSteps = [
   { n: "03", title: "Verify", desc: "Quality checks, certification and specification matching before purchase." },
   { n: "04", title: "Deliver", desc: "Consolidated logistics, customs handling and on-time delivery to your site." },
   { n: "05", title: "Support", desc: "Ongoing partnership, reordering and continuous supply optimization." },
+];
+
+// Bento grid — 6 categories, mixed tile sizes, mapped to /public/images
+export const bentoCategories = [
+  {
+    name: "Industrial Products",
+    desc: "Bearings, motors, drives, pumps, valves and rotating equipment.",
+    image: "/images/industrial-products.jpg",
+    href: "/products",
+    size: "large" as const,
+  },
+  {
+    name: "Engineering Supplies",
+    desc: "Fasteners, seals, tools and precision-engineered components.",
+    image: "/images/engineering-supplies.png",
+    href: "/products",
+    size: "small" as const,
+  },
+  {
+    name: "Packaging Materials",
+    desc: "Stretch film, strapping, cartons and protective packaging.",
+    image: "/images/packaging-materials.jpg",
+    href: "/products",
+    size: "small" as const,
+  },
+  {
+    name: "Safety Equipment",
+    desc: "PPE, signage, fall protection and industrial safety systems.",
+    image: "/images/safety-equipment.png",
+    href: "/products",
+    size: "small" as const,
+  },
+  {
+    name: "Maintenance Products",
+    desc: "Lubricants, adhesives, cleaning and MRO consumables.",
+    image: "/images/maintenance-products.jpg",
+    href: "/products",
+    size: "small" as const,
+  },
+  {
+    name: "Specialized Solutions",
+    desc: "Custom sourcing for hard-to-find and technical requirements.",
+    image: "/images/specialized-solutions.png",
+    href: "/products",
+    size: "large" as const,
+  },
+];
+
+// Why choose us — differentiators
+export const differentiators = [
+  {
+    icon: "BadgeCheck",
+    label: "VERIFIED NETWORK",
+    title: "Verified supplier network",
+    desc: "Every supplier is vetted for capability, certification and track record before a single unit ships.",
+  },
+  {
+    icon: "Globe2",
+    label: "DUAL SOURCING",
+    title: "Local + international sourcing",
+    desc: "Pakistan-based stock and relationships, backed by lanes into China, the Gulf and Europe — whichever wins on price and lead time.",
+  },
+  {
+    icon: "Timer",
+    label: "HARD-TO-FIND",
+    title: "Speed on obsolete & rare parts",
+    desc: "Discontinued bearing? Legacy drive? Our network specializes in parts other suppliers give up on.",
+  },
+  {
+    icon: "UserCheck",
+    label: "ONE CONTACT",
+    title: "Single accountable contact",
+    desc: "One person owns your order from RFQ to delivery — no call centers, no hand-offs, no excuses.",
+  },
+];
+
+// Case studies — Problem → Solution → Result (anonymized placeholders)
+export const caseStudies = [
+  {
+    sector: "Textile · Faisalabad",
+    problem: "A spinning mill's imported ring-frame bearings were discontinued; the OEM quoted a 16-week lead time.",
+    solution: "METTCO located certified equivalent stock through a verified Shanghai distributor and air-freighted the first batch.",
+    result: "Line back at full capacity with zero specification compromise.",
+    metric: "16 wks → 9 days",
+    metricLabel: "lead time",
+  },
+  {
+    sector: "Food Processing · Lahore",
+    problem: "A processor was overpaying for food-grade conveyor components through a local middleman markup chain.",
+    solution: "Direct sourcing from the original Taiwanese manufacturer with pre-shipment quality inspection.",
+    result: "Same certified components, landed cost down substantially on an annual contract.",
+    metric: "−23%",
+    metricLabel: "landed cost",
+  },
+  {
+    sector: "Construction · Islamabad",
+    problem: "A contractor faced penalty clauses when a fastener shipment failed site QA two weeks before deadline.",
+    solution: "Emergency re-source from verified local stock, third-party tested and delivered to site in batches.",
+    result: "Deadline met; penalty avoided; contractor moved all MRO buying to METTCO.",
+    metric: "72 hrs",
+    metricLabel: "to first delivery",
+  },
+];
+
+// FAQ
+export const faqs = [
+  {
+    q: "What are your typical lead times?",
+    a: "In-stock local items ship within 24–72 hours. International sourcing typically runs 2–6 weeks depending on origin and freight mode. Every quote states a committed lead time before you order — and we flag risk early if anything changes.",
+  },
+  {
+    q: "Do you have minimum order quantities?",
+    a: "No blanket MOQ. Some manufacturer-direct lines carry factory minimums, which we state clearly in the quote. For smaller requirements we consolidate orders to keep unit costs sensible.",
+  },
+  {
+    q: "Which regions do you source from?",
+    a: "Pakistan first, where quality and price compete. Beyond that: China, Taiwan, the Gulf, Turkey and Europe through vetted manufacturer and distributor relationships. We quote the origin so you always know what you're buying.",
+  },
+  {
+    q: "How do you verify quality before shipment?",
+    a: "Specification matching against your requirement, certificate verification (material certs, ISO, CE where applicable), and pre-shipment inspection — photographic or third-party depending on order value. Nothing ships that we wouldn't put our name on.",
+  },
+  {
+    q: "What are your payment and delivery terms?",
+    a: "Standard terms are advance or LC for international orders and negotiated credit terms for repeat clients. Delivery can be ex-warehouse, to-site, or full import handling with customs clearance — stated per quote.",
+  },
+];
+
+// Trust strip claims (thin bar under hero)
+export const trustPoints = [
+  "Quotes within 24 hours",
+  "Verified suppliers only",
+  "Import & export licensed",
+  "Pre-shipment inspection",
 ];
 
 export const stats = [

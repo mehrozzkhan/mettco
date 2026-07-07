@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Clock3, FileText, ShieldCheck } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
 import { Reveal } from "@/components/motion/Reveal";
-import { QuoteForm } from "@/components/forms/QuoteForm";
+import { RFQBuilder } from "@/components/forms/RFQBuilder";
 
 export const metadata: Metadata = {
   title: "Request a Quote",
@@ -24,13 +25,13 @@ export default function QuotePage() {
         lead="The more detail you share — specification, standard, quantity, timeline — the sharper and faster our quotation."
       />
 
-      <section className="bg-paper py-24 md:py-32">
+      <section className="bg-ink py-24 md:py-32">
         <div className="container-x grid gap-10 lg:grid-cols-[1fr_1.8fr]">
           <div className="space-y-5 lg:sticky lg:top-28 lg:self-start">
             {promises.map((p, i) => (
               <Reveal key={p.title} delay={i * 0.08}>
-                <div className="flex items-start gap-5 rounded-2xl border border-line bg-white p-6">
-                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-paper-warm text-navy">
+                <div className="flex items-start gap-5 rounded-2xl border border-line bg-ink-800 p-6">
+                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-ink-700 text-navy">
                     <p.icon className="h-5 w-5" aria-hidden />
                   </span>
                   <div>
@@ -43,7 +44,9 @@ export default function QuotePage() {
           </div>
 
           <Reveal delay={0.1}>
-            <QuoteForm />
+            <Suspense>
+              <RFQBuilder />
+            </Suspense>
           </Reveal>
         </div>
       </section>

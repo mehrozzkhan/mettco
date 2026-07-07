@@ -19,15 +19,15 @@ export default function ContactPage() {
         lead="Quotes, partnerships, sourcing questions or anything in between — a real person reads every message."
       />
 
-      <section className="bg-paper py-24 md:py-32">
+      <section className="bg-ink py-24 md:py-32">
         <div className="container-x grid gap-10 lg:grid-cols-[1fr_1.8fr]">
           <div className="space-y-5 lg:sticky lg:top-28 lg:self-start">
             <Reveal>
               <a
                 href={`mailto:${company.email}`}
-                className="group flex items-start gap-5 rounded-2xl border border-line bg-white p-6 transition-all duration-300 hover:border-azure/40 hover:shadow-elevated"
+                className="group flex items-start gap-5 rounded-2xl border border-line bg-ink-800 p-6 transition-all duration-300 hover:border-azure/40 hover:shadow-elevated"
               >
-                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-paper-warm text-navy transition-colors duration-300 group-hover:bg-azure group-hover:text-white">
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-ink-700 text-navy transition-colors duration-300 group-hover:bg-azure group-hover:text-white">
                   <Mail className="h-5 w-5" aria-hidden />
                 </span>
                 <span>
@@ -39,9 +39,9 @@ export default function ContactPage() {
             <Reveal delay={0.08}>
               <a
                 href={`tel:${company.phone.replace(/\s/g, "")}`}
-                className="group flex items-start gap-5 rounded-2xl border border-line bg-white p-6 transition-all duration-300 hover:border-azure/40 hover:shadow-elevated"
+                className="group flex items-start gap-5 rounded-2xl border border-line bg-ink-800 p-6 transition-all duration-300 hover:border-azure/40 hover:shadow-elevated"
               >
-                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-paper-warm text-navy transition-colors duration-300 group-hover:bg-azure group-hover:text-white">
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-ink-700 text-navy transition-colors duration-300 group-hover:bg-azure group-hover:text-white">
                   <Phone className="h-5 w-5" aria-hidden />
                 </span>
                 <span>
@@ -51,8 +51,8 @@ export default function ContactPage() {
               </a>
             </Reveal>
             <Reveal delay={0.16}>
-              <div className="flex items-start gap-5 rounded-2xl border border-line bg-white p-6">
-                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-paper-warm text-navy">
+              <div className="flex items-start gap-5 rounded-2xl border border-line bg-ink-800 p-6">
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-ink-700 text-navy">
                   <MapPin className="h-5 w-5" aria-hidden />
                 </span>
                 <span>

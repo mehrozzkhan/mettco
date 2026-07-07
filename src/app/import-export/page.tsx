@@ -27,7 +27,7 @@ export default function ImportExportPage() {
       />
 
       {/* Two directions */}
-      <section className="bg-paper py-24 md:py-32">
+      <section className="bg-ink py-24 md:py-32">
         <div className="container-x grid gap-5 lg:grid-cols-2">
           <Reveal>
             <div className="grid-texture h-full rounded-2xl bg-ink p-10 md:p-14">
@@ -49,7 +49,7 @@ export default function ImportExportPage() {
             </div>
           </Reveal>
           <Reveal delay={0.1}>
-            <div className="h-full rounded-2xl border border-line bg-white p-10 md:p-14">
+            <div className="h-full rounded-2xl border border-line bg-ink-800 p-10 md:p-14">
               <ArrowUpFromLine className="h-8 w-8 text-azure" aria-hidden />
               <h2 className="mt-6 text-2xl font-semibold md:text-3xl">Exporting from Pakistan</h2>
               <p className="mt-4 text-base leading-relaxed text-steel-light">
@@ -70,7 +70,7 @@ export default function ImportExportPage() {
         </div>
       </section>
 
-      <section className="border-t border-line bg-paper-warm py-24 md:py-32">
+      <section className="border-t border-line bg-ink-700 py-24 md:py-32">
         <div className="container-x">
           <SectionHeader
             eyebrow="Trade services"
@@ -79,7 +79,7 @@ export default function ImportExportPage() {
           <RevealGroup className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
             {services.map((s) => (
               <RevealItem key={s.title}>
-                <div className="h-full rounded-2xl border border-line bg-white p-8">
+                <div className="h-full rounded-2xl border border-line bg-ink-800 p-8">
                   <s.icon className="h-6 w-6 text-azure" aria-hidden />
                   <h3 className="mt-5 text-base font-semibold">{s.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-steel-light">{s.desc}</p>

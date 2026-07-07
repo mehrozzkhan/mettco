@@ -21,41 +21,56 @@ const config: Config = {
     },
     extend: {
       colors: {
-        // METTCO brand system — deep navy + cerulean (from brand logo)
+        // METTCO "Graphite & Signal" system — machined steel + hi-vis orange
         ink: {
-          DEFAULT: "#060709",
-          900: "#060709",
-          800: "#0C0E12",
-          700: "#13161C",
+          DEFAULT: "#0B0E12", // base
+          900: "#0B0E12",
+          800: "#12161C", // surface 1
+          700: "#1A2027", // surface 2
         },
+        // Heading text (legacy name kept: h1-h5 + cards use text-navy)
         navy: {
-          DEFAULT: "#0A2440",
-          light: "#123256",
+          DEFAULT: "#F3F5F7",
+          light: "#C6CFD8",
         },
+        // Body / muted text scale
         steel: {
-          DEFAULT: "#33475C",
-          light: "#5D7288",
-          lighter: "#8FA3B8",
+          DEFAULT: "#9BA6B2",
+          light: "#8A95A1",
+          lighter: "#9BA6B2",
+          muted: "#5C6672",
         },
+        // PRIMARY accent — hi-vis signal orange (legacy name kept site-wide)
         azure: {
-          DEFAULT: "#0080B8",
-          light: "#22A8DE",
-          dark: "#00618D",
-          soft: "#7DD0F0",
+          DEFAULT: "#FF5A1F",
+          light: "#FF7A45",
+          dark: "#E24A12",
+          soft: "#FFB08F",
         },
+        signal: {
+          DEFAULT: "#FF5A1F",
+          hover: "#E24A12",
+        },
+        // Secondary — blueprint cyan, for data/spec chips/links only
+        blueprint: {
+          DEFAULT: "#4FA8C4",
+          dim: "#3A7D93",
+        },
+        // Light text on dark (legacy: text-paper everywhere)
         paper: {
-          DEFAULT: "#F5F7FA",
-          warm: "#EBEFF4",
+          DEFAULT: "#F3F5F7",
+          warm: "#E7EBEF",
           card: "#FFFFFF",
         },
         line: {
-          DEFAULT: "#DCE3EB",
-          dark: "#1E2229",
+          DEFAULT: "#2A323C",
+          dark: "#232A33",
         },
       },
       fontFamily: {
         display: ["var(--font-display)", "system-ui", "sans-serif"],
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
       },
       fontSize: {
         "2xs": ["0.6875rem", { lineHeight: "1rem", letterSpacing: "0.08em" }],

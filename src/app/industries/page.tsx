@@ -19,12 +19,12 @@ export default function IndustriesPage() {
         lead="Every industry has its own standards, consumables and failure points. METTCO's sourcing adapts to each — the reliability doesn't change."
       />
 
-      <section className="bg-paper py-24 md:py-32">
+      <section className="bg-ink py-24 md:py-32">
         <div className="container-x">
           <RevealGroup className="grid gap-5 md:grid-cols-2" stagger={0.05}>
             {industries.map((ind, i) => (
               <RevealItem key={ind.slug}>
-                <div className="group flex h-full items-start gap-6 rounded-2xl border border-line bg-white p-8 transition-all duration-300 ease-out-expo hover:-translate-y-1 hover:border-azure/40 hover:shadow-elevated md:p-10">
+                <div className="group flex h-full items-start gap-6 rounded-2xl border border-line bg-ink-800 p-8 transition-all duration-300 ease-out-expo hover:-translate-y-1 hover:border-azure/40 hover:shadow-elevated md:p-10">
                   <span className="font-display text-3xl font-semibold text-azure/25">
                     {String(i + 1).padStart(2, "0")}
                   </span>

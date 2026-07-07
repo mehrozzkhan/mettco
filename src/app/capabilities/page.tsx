@@ -28,11 +28,11 @@ export default function CapabilitiesPage() {
         lead="Each capability works alone. Together, they form an end-to-end system that takes your requirement from specification to delivered supply."
       />
 
-      <section className="bg-paper py-24 md:py-32">
+      <section className="bg-ink py-24 md:py-32">
         <div className="container-x space-y-6">
           {capabilities.map((cap, i) => (
             <Reveal key={cap.title} delay={i * 0.04}>
-              <div className="grid gap-8 rounded-2xl border border-line bg-white p-8 md:grid-cols-[80px_1fr_1.1fr] md:p-12">
+              <div className="grid gap-8 rounded-2xl border border-line bg-ink-800 p-8 md:grid-cols-[80px_1fr_1.1fr] md:p-12">
                 <span className="font-display text-5xl font-semibold text-azure/25">
                   {String(i + 1).padStart(2, "0")}
                 </span>

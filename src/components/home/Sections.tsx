@@ -1,43 +1,24 @@
 import {
   ArrowUpRight,
-  Cog,
   DraftingCompass,
-  Droplets,
   Factory,
   Globe2,
   HardHat,
   Handshake,
   Package,
-  Pill,
   ShieldCheck,
   Shirt,
-  Target,
   Truck,
   UtensilsCrossed,
   Warehouse,
   Wheat,
-  Wrench,
 } from "lucide-react";
-import {
-  capabilities,
-  industries,
-  processSteps,
-  productCategories,
-} from "@/lib/site";
+import { capabilities, industries } from "@/lib/site";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/Reveal";
 import { SpotlightCard } from "@/components/motion/SpotlightCard";
-import { GrowLine } from "@/components/motion/TextReveal";
 import { Button } from "@/components/ui/Button";
-
-const categoryIcons: Record<string, React.ComponentType<{ className?: string }>> = {
-  Cog,
-  Wrench,
-  Package,
-  HardHat,
-  Droplets,
-  Target,
-};
+import { SourcingNetwork } from "@/components/home/SourcingNetwork";
 
 const industryIcons: Record<string, React.ComponentType<{ className?: string }>> = {
   Factory,
@@ -47,16 +28,15 @@ const industryIcons: Record<string, React.ComponentType<{ className?: string }>>
   Truck,
   HardHat,
   DraftingCompass,
-  Pill,
   Package,
   Wheat,
 };
 
-/* ── Industries marquee ─────────────────────────────────────────── */
+/* ── Industries marquee — sector wordmark trust bar ─────────────── */
 export function IndustriesStrip() {
   const items = [...industries, ...industries]; // duplicated for seamless loop
   return (
-    <section aria-label="Industries we serve" className="border-b border-line bg-paper-warm py-6">
+    <section aria-label="Industries we serve" className="border-b border-line bg-ink py-6">
       <div className="relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
         <div className="flex w-max animate-marquee gap-12 whitespace-nowrap hover:[animation-play-state:paused] motion-reduce:animate-none">
           {items.map((ind, i) => {
@@ -64,7 +44,7 @@ export function IndustriesStrip() {
             return (
               <span
                 key={`${ind.slug}-${i}`}
-                className="flex items-center gap-12 text-sm font-medium uppercase tracking-[0.18em] text-steel-light"
+                className="flex items-center gap-12 font-mono text-sm font-medium uppercase tracking-[0.18em] text-steel-light"
               >
                 <span className="flex items-center gap-3">
                   <Icon className="h-[18px] w-[18px] text-azure" aria-hidden />
@@ -80,100 +60,54 @@ export function IndustriesStrip() {
   );
 }
 
-/* ── Product categories ─────────────────────────────────────────── */
-export function CategoriesSection() {
+/* ── Capabilities — sticky heading left, 01–06 mono list right ──── */
+export function CapabilitiesSection() {
   return (
-    <section className="bg-paper py-24 md:py-32">
-      <div className="container-x">
-        <div className="flex flex-wrap items-end justify-between gap-8">
+    <section className="relative overflow-hidden bg-ink py-24 md:py-32">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute right-[-20%] top-1/4 h-[760px] w-[760px] bg-[radial-gradient(closest-side,rgba(255,90,31,0.07),transparent_72%)]"
+      />
+      <div className="container-x relative grid items-start gap-14 lg:grid-cols-[1fr_1.3fr]">
+        <div className="lg:sticky lg:top-28">
           <SectionHeader
-            eyebrow="What we supply"
-            title="Six categories. One reliable partner."
-            lead="From rotating equipment to packaging lines — METTCO sources, verifies and delivers the products your operations depend on."
+            dark
+            eyebrow="02 — Capabilities"
+            title="Built like a multinational. Agile like a partner."
+            lead="Every engagement is backed by disciplined sourcing, verified quality and end-to-end trade execution."
           />
-          <Reveal delay={0.15}>
-            <Button href="/products" variant="ghost" className="text-azure">
-              All product categories
+          <Reveal delay={0.2} className="mt-10">
+            <Button href="/capabilities" variant="outline">
+              See full capabilities
             </Button>
           </Reveal>
         </div>
 
-        <RevealGroup className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {productCategories.map((cat) => {
-            const Icon = categoryIcons[cat.icon] ?? Cog;
-            return (
-              <RevealItem key={cat.name} className="h-full">
-                <SpotlightCard
-                  href="/products"
-                  className="flex h-full flex-col rounded-2xl border border-line bg-white p-8 transition-all duration-300 ease-out-expo hover:-translate-y-1 hover:border-azure/40 hover:shadow-elevated"
-                >
-                  <span className="grid h-12 w-12 place-items-center rounded-xl bg-paper-warm text-navy transition-colors duration-300 group-hover:bg-azure group-hover:text-white">
-                    <Icon className="h-6 w-6" aria-hidden />
-                  </span>
-                  <h3 className="mt-6 text-lg font-semibold">{cat.name}</h3>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-steel-light">
-                    {cat.desc}
-                  </p>
-                  <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-azure">
-                    Explore
-                    <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden />
-                  </span>
-                </SpotlightCard>
-              </RevealItem>
-            );
-          })}
-        </RevealGroup>
-      </div>
-    </section>
-  );
-}
-
-/* ── Capabilities (dark) ────────────────────────────────────────── */
-export function CapabilitiesSection() {
-  return (
-    <section className="grid-texture relative overflow-hidden bg-ink py-24 md:py-32">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute right-[-20%] top-1/4 h-[760px] w-[760px] bg-[radial-gradient(closest-side,rgba(0,128,184,0.09),transparent_72%)]"
-      />
-      <div className="container-x relative">
-        <SectionHeader
-          dark
-          eyebrow="Capabilities"
-          title="Built like a multinational. Agile like a partner."
-          lead="Every engagement is backed by disciplined sourcing, verified quality and end-to-end trade execution."
-        />
-
-        <RevealGroup className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-line-dark bg-line-dark md:grid-cols-2 lg:grid-cols-3">
+        <RevealGroup className="divide-y divide-line border-y border-line" stagger={0.08}>
           {capabilities.map((cap, i) => (
-            <RevealItem key={cap.title} className="h-full">
-              <SpotlightCard
-                glow="rgba(34, 168, 222, 0.12)"
-                className="h-full bg-ink-800 p-8 transition-colors duration-300 hover:bg-ink-700"
-              >
-                <span className="font-display text-sm font-semibold text-azure">
+            <RevealItem key={cap.title}>
+              <div className="group flex gap-8 py-8 transition-colors duration-300 md:gap-12">
+                <span className="font-mono text-sm font-medium text-azure">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <h3 className="mt-4 text-lg font-semibold text-paper">{cap.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-steel-lighter">
-                  {cap.desc}
-                </p>
-              </SpotlightCard>
+                <div>
+                  <h3 className="text-lg font-semibold text-paper transition-colors duration-300 md:text-xl">
+                    {cap.title}
+                  </h3>
+                  <p className="mt-2 max-w-xl text-sm leading-relaxed text-steel-lighter">
+                    {cap.desc}
+                  </p>
+                </div>
+              </div>
             </RevealItem>
           ))}
         </RevealGroup>
-
-        <Reveal delay={0.2} className="mt-10">
-          <Button href="/capabilities" variant="outline">
-            See full capabilities
-          </Button>
-        </Reveal>
       </div>
     </section>
   );
 }
 
-/* ── Global trade band ──────────────────────────────────────────── */
+/* ── Beyond borders — lanes echo the hero network ───────────────── */
 export function GlobalTradeSection() {
   const pillars = [
     {
@@ -197,11 +131,19 @@ export function GlobalTradeSection() {
   ];
 
   return (
-    <section className="bg-paper py-24 md:py-32">
-      <div className="container-x grid items-start gap-14 lg:grid-cols-[1fr_1.2fr]">
+    <section className="relative overflow-hidden bg-ink-800/40 py-24 md:py-32">
+      {/* Faint lane graphic echoing the hero signature */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute left-1/2 top-1/2 hidden w-[1100px] -translate-x-1/2 -translate-y-1/2 opacity-[0.12] lg:block"
+      >
+        <SourcingNetwork className="h-auto w-full" />
+      </div>
+
+      <div className="container-x relative grid items-start gap-14 lg:grid-cols-[1fr_1.2fr]">
         <div className="lg:sticky lg:top-28">
           <SectionHeader
-            eyebrow="Beyond borders"
+            eyebrow="03 — Beyond borders"
             title="From local plants to international markets."
             lead="METTCO is built to serve multiple industrial sectors through sourcing, trading, importing and exporting — connecting manufacturers and businesses across markets."
           />
@@ -210,19 +152,19 @@ export function GlobalTradeSection() {
           </Reveal>
         </div>
 
-        <RevealGroup className="space-y-5">
+        <RevealGroup className="space-y-4">
           {pillars.map((p) => (
             <RevealItem key={p.title}>
               <SpotlightCard
                 href={p.href}
-                className="flex items-start gap-6 rounded-2xl border border-line bg-white p-8 transition-all duration-300 ease-out-expo hover:-translate-y-1 hover:border-azure/40 hover:shadow-elevated"
+                className="glass flex items-start gap-6 rounded-2xl p-8 transition-all duration-300 ease-out-expo hover:-translate-y-1 hover:border-azure/30"
               >
-                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-paper-warm text-navy transition-colors duration-300 group-hover:bg-azure group-hover:text-white">
+                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-azure/10 text-azure">
                   <p.icon className="h-6 w-6" aria-hidden />
                 </span>
                 <span>
-                  <h3 className="text-lg font-semibold">{p.title}</h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-steel-light">
+                  <h3 className="text-lg font-semibold text-paper">{p.title}</h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-steel-lighter">
                     {p.desc}
                   </p>
                 </span>
@@ -233,96 +175,6 @@ export function GlobalTradeSection() {
               </SpotlightCard>
             </RevealItem>
           ))}
-        </RevealGroup>
-      </div>
-    </section>
-  );
-}
-
-/* ── Process ────────────────────────────────────────────────────── */
-export function ProcessSection() {
-  return (
-    <section className="border-t border-line bg-paper-warm py-24 md:py-32">
-      <div className="container-x">
-        <SectionHeader
-          align="center"
-          eyebrow="Our process"
-          title="Five steps. Zero surprises."
-          lead="A disciplined procurement workflow that turns your requirement into delivered, verified supply."
-        />
-
-        <div className="relative mt-16">
-          {/* Connector line drawing across the five steps */}
-          <GrowLine
-            delay={0.3}
-            className="absolute -top-8 left-0 hidden h-px w-full bg-gradient-to-r from-azure/60 via-azure/25 to-transparent lg:block"
-          />
-          <RevealGroup className="grid gap-5 sm:grid-cols-2 lg:grid-cols-5" stagger={0.1}>
-            {processSteps.map((step) => (
-              <RevealItem key={step.n} className="h-full">
-                <div className="group relative h-full rounded-2xl border border-line bg-white p-6 transition-all duration-300 ease-out-expo hover:-translate-y-1 hover:border-azure/40 hover:shadow-elevated">
-                  <span className="font-display text-4xl font-semibold text-azure/25 transition-colors duration-300 group-hover:text-azure">
-                    {step.n}
-                  </span>
-                  <h3 className="mt-4 font-semibold">{step.title}</h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-steel-light">
-                    {step.desc}
-                  </p>
-                </div>
-              </RevealItem>
-            ))}
-          </RevealGroup>
-        </div>
-
-        <Reveal delay={0.25} className="mt-12 text-center">
-          <Button href="/process">See the full process</Button>
-        </Reveal>
-      </div>
-    </section>
-  );
-}
-
-/* ── Industries grid ────────────────────────────────────────────── */
-export function IndustriesSection() {
-  return (
-    <section className="bg-paper py-24 md:py-32">
-      <div className="container-x">
-        <div className="flex flex-wrap items-end justify-between gap-8">
-          <SectionHeader
-            eyebrow="Industries we serve"
-            title="Nine sectors. One standard of supply."
-          />
-          <Reveal delay={0.15}>
-            <Button href="/industries" variant="ghost" className="text-azure">
-              All industries
-            </Button>
-          </Reveal>
-        </div>
-
-        <RevealGroup className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-5" stagger={0.05}>
-          {industries.map((ind) => {
-            const Icon = industryIcons[ind.icon] ?? Factory;
-            return (
-            <RevealItem key={ind.slug} className="h-full">
-              <SpotlightCard
-                href="/industries"
-                className="flex h-full min-h-[148px] flex-col justify-between bg-white p-6 transition-colors duration-300 hover:bg-paper-warm"
-              >
-                <span className="flex items-start justify-between gap-3">
-                  <h3 className="text-base font-semibold">{ind.name}</h3>
-                  <Icon
-                    className="h-5 w-5 shrink-0 text-steel-lighter transition-colors duration-300 group-hover:text-azure"
-                    aria-hidden
-                  />
-                </span>
-                <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-[0.14em] text-steel-lighter transition-colors duration-300 group-hover:text-azure">
-                  View sector
-                  <ArrowUpRight className="h-3.5 w-3.5" aria-hidden />
-                </span>
-              </SpotlightCard>
-            </RevealItem>
-            );
-          })}
         </RevealGroup>
       </div>
     </section>

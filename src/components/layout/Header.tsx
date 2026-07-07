@@ -25,19 +25,11 @@ function Logo({ light }: { light?: boolean }) {
         <img
           src="/logo.png"
           alt=""
-          className={cn(
-            "h-full w-full object-contain transition-[filter] duration-300",
-            light && "brightness-0 invert"
-          )}
+          className="h-full w-full brightness-0 invert object-contain"
         />
       </span>
       <span className="flex flex-col leading-none">
-        <span
-          className={cn(
-            "font-display text-xl font-semibold tracking-tight",
-            light ? "text-paper" : "text-navy"
-          )}
-        >
+        <span className="font-display text-xl font-semibold tracking-tight text-paper">
           {company.name}
         </span>
         <span
@@ -88,7 +80,7 @@ export function Header() {
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         overDark
           ? "bg-transparent"
-          : "border-b border-line bg-paper/95 backdrop-blur-md"
+          : "border-b border-line bg-ink/95 backdrop-blur-md"
       )}
     >
       {/* Reading progress */}
@@ -142,12 +134,12 @@ export function Header() {
                       transition={{ duration: 0.18, ease: [0.16, 1, 0.3, 1] }}
                       className="absolute left-0 top-full w-[340px] pt-3"
                     >
-                      <div className="overflow-hidden rounded-2xl border border-line bg-white p-2 shadow-deep">
+                      <div className="overflow-hidden rounded-2xl border border-line bg-ink-800 p-2 shadow-deep">
                         {item.children.map((child) => (
                           <Link
                             key={child.href}
                             href={child.href}
-                            className="group flex items-start justify-between gap-3 rounded-xl px-4 py-3 transition-colors duration-200 hover:bg-paper"
+                            className="group flex items-start justify-between gap-3 rounded-xl px-4 py-3 transition-colors duration-200 hover:bg-ink"
                           >
                             <span>
                               <span className="block text-sm font-semibold text-navy">
@@ -191,7 +183,7 @@ export function Header() {
         <div className="hidden lg:block">
           <Link
             href="/request-a-quote"
-            className="btn-shine inline-flex cursor-pointer items-center gap-2 rounded-full bg-azure px-5 py-2.5 text-sm font-medium text-white transition-all duration-300 ease-out-expo hover:bg-azure-dark hover:shadow-elevated"
+            className="btn-shine inline-flex cursor-pointer items-center gap-2 rounded-full bg-azure px-5 py-2.5 text-sm font-semibold text-ink transition-all duration-300 ease-out-expo hover:bg-azure-dark hover:shadow-elevated"
           >
             Request a Quote
             <ArrowUpRight className="h-4 w-4" aria-hidden />
@@ -222,14 +214,14 @@ export function Header() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="overflow-hidden border-b border-line bg-paper lg:hidden"
+            className="overflow-hidden border-b border-line bg-ink lg:hidden"
           >
             <div className="container-x flex max-h-[calc(100dvh-72px)] flex-col gap-1 overflow-y-auto py-4">
               {primaryNav.map((item) => (
                 <div key={item.label}>
                   <Link
                     href={item.href}
-                    className="block rounded-xl px-4 py-3 text-base font-semibold text-navy hover:bg-paper-warm"
+                    className="block rounded-xl px-4 py-3 text-base font-semibold text-navy hover:bg-ink-700"
                   >
                     {item.label}
                   </Link>
@@ -239,7 +231,7 @@ export function Header() {
                         <Link
                           key={child.href}
                           href={child.href}
-                          className="block rounded-lg px-4 py-2.5 text-sm text-steel hover:bg-paper-warm hover:text-navy"
+                          className="block rounded-lg px-4 py-2.5 text-sm text-steel hover:bg-ink-700 hover:text-navy"
                         >
                           {child.label}
                         </Link>

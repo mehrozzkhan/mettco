@@ -28,13 +28,13 @@ export default function SolutionsPage() {
         lead="Not every supply problem is a product problem. METTCO builds solution programs — repeatable, accountable and measured — around your operation's real needs."
       />
 
-      <section className="bg-paper py-24 md:py-32">
+      <section className="bg-ink py-24 md:py-32">
         <div className="container-x">
           <RevealGroup className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {solutions.map((s) => (
               <RevealItem key={s.title}>
-                <div className="group h-full rounded-2xl border border-line bg-white p-8 transition-all duration-300 ease-out-expo hover:-translate-y-1 hover:border-azure/40 hover:shadow-elevated">
-                  <span className="grid h-12 w-12 place-items-center rounded-xl bg-paper-warm text-navy transition-colors duration-300 group-hover:bg-azure group-hover:text-white">
+                <div className="group h-full rounded-2xl border border-line bg-ink-800 p-8 transition-all duration-300 ease-out-expo hover:-translate-y-1 hover:border-azure/40 hover:shadow-elevated">
+                  <span className="grid h-12 w-12 place-items-center rounded-xl bg-ink-700 text-navy transition-colors duration-300 group-hover:bg-azure group-hover:text-white">
                     <s.icon className="h-6 w-6" aria-hidden />
                   </span>
                   <h3 className="mt-6 text-lg font-semibold">{s.title}</h3>
@@ -46,7 +46,7 @@ export default function SolutionsPage() {
         </div>
       </section>
 
-      <section className="border-t border-line bg-paper-warm py-24 md:py-28">
+      <section className="border-t border-line bg-ink-700 py-24 md:py-28">
         <div className="container-x text-center">
           <SectionHeader
             align="center"
