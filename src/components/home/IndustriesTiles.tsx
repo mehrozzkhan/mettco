@@ -46,14 +46,16 @@ export function IndustriesTiles() {
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover transition-transform duration-300 ease-out-expo group-hover:scale-[1.03]"
                   />
-                  {/* Bottom-anchored scrim: transparent → graphite. Deepens on hover. */}
+                  {/* Bottom-anchored scrim: transparent → near-solid graphite,
+                      tall enough to cover title + description on bright photos.
+                      Deepens on hover. */}
                   <div
                     aria-hidden
-                    className="absolute inset-0 bg-gradient-to-t from-ink via-ink/45 to-transparent transition-opacity duration-300"
+                    className="absolute inset-0 bg-[linear-gradient(to_top,rgba(11,14,18,0.97)_0%,rgba(11,14,18,0.82)_22%,rgba(11,14,18,0.45)_45%,transparent_70%)]"
                   />
                   <div
                     aria-hidden
-                    className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                    className="absolute inset-0 bg-[linear-gradient(to_top,rgba(11,14,18,0.9)_0%,rgba(11,14,18,0.4)_40%,transparent_70%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                   />
                 </div>
 
