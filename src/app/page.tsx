@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import CtaBand from "@/components/CtaBand";
 import FounderNote from "@/components/FounderNote";
+import HeroSlideshow from "@/components/HeroSlideshow";
 import { images } from "@/config/site";
 
 export const metadata: Metadata = {
@@ -64,17 +65,22 @@ export default function HomePage() {
           headline, sub-line and both CTAs must sit inside the first screen. */}
       <section className="relative flex min-h-[100svh] flex-col justify-end">
         <div className="img-frame absolute inset-0" aria-hidden="true">
-          <Image
-            src={images.hero.src}
-            alt=""
-            fill
-            priority
-            fetchPriority="high"
-            quality={50} // duotone + scrim hide compression artifacts; LCP wins
-            className="img-duotone object-cover"
-            sizes="100vw"
-          />
-          {/* Extra graphite scrim so headline contrast passes AA over any crop. */}
+          {/* Slide 1 stays the SSR priority image (the LCP element);
+              HeroSlideshow only layers the two lazy slides on top of it. */}
+          <HeroSlideshow>
+            <Image
+              src={images.hero.src}
+              alt=""
+              fill
+              priority
+              fetchPriority="high"
+              quality={50} // duotone + scrim hide compression artifacts; LCP wins
+              className="img-duotone object-cover"
+              sizes="100vw"
+            />
+          </HeroSlideshow>
+          {/* Extra graphite scrim above every slide so headline contrast
+              passes AA on all three. */}
           <div className="absolute inset-0 bg-gradient-to-t from-graphite via-graphite/70 to-graphite/40" />
         </div>
 

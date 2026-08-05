@@ -102,6 +102,22 @@ export const images = {
   },
 } as const;
 
+// Home hero ambient slideshow. Slide 1 is images.hero (locked, the LCP
+// element). These two lazy-load after idle and share the same duotone
+// treatment. Keep total mobile transfer for both under ~250KB.
+export const heroSlides = [
+  {
+    // Services: angle-grinder sparks on site, dark cinematic (Unsplash)
+    src: u("1504917595217-d4dc5ebe6122", 1600, 55),
+    alt: "Sparks flying from an angle grinder on a work site",
+  },
+  {
+    // Technology: server racks and cabling in low light (Unsplash)
+    src: u("1558494949-ef010cbdcc31", 1600, 55),
+    alt: "Server racks and network cabling in low light",
+  },
+] as const;
+
 export const waLink = () =>
   `https://wa.me/${site.whatsappNumber}?text=${encodeURIComponent(site.whatsappMessage)}`;
 

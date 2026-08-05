@@ -163,6 +163,34 @@
   }
 }
 
+/* Hero slideshow: slow alternating Ken Burns per slide. Transform only —
+   compositor work, no layout or paint. Paused with the cycle. */
+.hero-zoom-a {
+  animation: hero-kb-a 15.6s ease-in-out infinite alternate;
+}
+.hero-zoom-b {
+  animation: hero-kb-b 15.6s ease-in-out infinite alternate;
+}
+[data-paused] .hero-slide {
+  animation-play-state: paused;
+}
+@keyframes hero-kb-a {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.06);
+  }
+}
+@keyframes hero-kb-b {
+  from {
+    transform: scale(1.06);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
 /* Hero entrance — the one allowed sequence. CSS only, runs once.
    The h1 is deliberately NOT animated: it is the LCP element, and an
    opacity-0 start delays LCP. Speed outranks the decoration. */
