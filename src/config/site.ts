@@ -15,7 +15,7 @@ export const site = {
   founded: "2026",
   city: "Lahore",
   country: "Pakistan",
-  url: "https://mettco.com.pk",
+  url: "https://www.mettco.com.pk", // apex 308s to www — canonicals must match the served host
 
   // ---- Contact (replace placeholders with real values) ------------------
   // WhatsApp number in international format, digits only. e.g. 923001234567
