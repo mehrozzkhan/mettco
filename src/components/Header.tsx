@@ -36,10 +36,11 @@ export default function Header() {
       <div className={`container flex items-center justify-between ${scrolled ? "py-3" : "py-4"}`}>
         <Link
           href="/"
-          className="flex items-center gap-3 font-display text-xl tracking-[0.3em] text-paper"
+          className="flex items-center gap-2.5 font-display text-xl tracking-[0.3em] text-paper"
           aria-label="METTCO — home"
         >
-          <Image src="/logo.png" alt="METTCO logo" width={32} height={32} className="h-8 w-8" />
+          {/* logo-light.png: transparent-bg light mark (source is 798x912, ~0.875 aspect) */}
+          <Image src="/logo-light.png" alt="METTCO logo" width={23} height={26} />
           METTCO
         </Link>
 

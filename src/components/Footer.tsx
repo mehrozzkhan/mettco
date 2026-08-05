@@ -34,8 +34,8 @@ export default function Footer() {
     <footer className="border-t border-line pb-20 md:pb-0">
       <div className="container grid gap-10 py-12 md:grid-cols-4">
         <div>
-          <p className="flex items-center gap-3 font-display text-xl tracking-[0.3em]">
-            <Image src="/logo.png" alt="METTCO logo" width={32} height={32} className="h-8 w-8" />
+          <p className="flex items-center gap-2.5 font-display text-xl tracking-[0.3em]">
+            <Image src="/logo-light.png" alt="METTCO logo" width={19} height={22} />
             METTCO
           </p>
           <p className="mt-3 max-w-[26ch] text-sm text-paper-dim">{site.legalName}</p>
