@@ -1,71 +1,64 @@
 import type { Metadata } from "next";
-import { Mail, MapPin, Phone } from "lucide-react";
-import { PageHero } from "@/components/ui/PageHero";
-import { Reveal } from "@/components/motion/Reveal";
-import { QuoteForm } from "@/components/forms/QuoteForm";
-import { company } from "@/lib/site";
+import Link from "next/link";
+import PageHeader from "@/components/PageHeader";
+import { site, telLink, waLink } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "Contact",
-  description: `Reach METTCO — ${company.address}. Email ${company.email} or send a message through our contact form.`,
+  title: "Contact METTCO — Lahore | Phone, WhatsApp, Email",
+  description:
+    "Reach METTCO in Lahore by phone, WhatsApp or email. For quotes, use the guided requirement form — quotes within 24 hours.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {
+  const channels = [
+    {
+      label: "WhatsApp",
+      value: "Send your requirement directly",
+      href: waLink(),
+      external: true,
+    },
+    { label: "Phone", value: site.phoneDisplay, href: telLink(), external: true },
+    { label: "Email", value: site.email, href: `mailto:${site.email}`, external: true },
+  ];
+
   return (
     <>
-      <PageHero
-        eyebrow="Contact"
-        title="Let's talk supply."
-        lead="Quotes, partnerships, sourcing questions or anything in between — a real person reads every message."
+      <PageHeader
+        crumb={[{ href: "/contact", label: "Contact" }]}
+        title="Contact"
+        lede={`${site.city}, ${site.country} · ${site.hours}`}
       />
 
-      <section className="bg-ink py-24 md:py-32">
-        <div className="container-x grid gap-10 lg:grid-cols-[1fr_1.8fr]">
-          <div className="space-y-5 lg:sticky lg:top-28 lg:self-start">
-            <Reveal>
+      <section className="container max-w-3xl py-12 md:py-16" aria-label="Contact channels">
+        {/* Big tap targets: each channel is one full-width row. */}
+        <ul>
+          {channels.map((c, i) => (
+            <li key={c.label} className="manifest-row reveal" data-reveal-index={i}>
               <a
-                href={`mailto:${company.email}`}
-                className="group flex items-start gap-5 rounded-2xl border border-line bg-ink-800 p-6 transition-all duration-300 hover:border-azure/40 hover:shadow-elevated"
+                href={c.href}
+                className="group flex min-h-[72px] flex-col justify-center gap-1 py-4 md:flex-row md:items-center md:justify-between"
               >
-                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-ink-700 text-navy transition-colors duration-300 group-hover:bg-azure group-hover:text-white">
-                  <Mail className="h-5 w-5" aria-hidden />
+                <span className="font-mono text-2xs uppercase tracking-widest text-paper-dim">
+                  {c.label}
                 </span>
-                <span>
-                  <span className="block font-semibold">Email</span>
-                  <span className="mt-1 block text-sm text-steel-light">{company.email}</span>
+                <span className="font-display text-xl uppercase tracking-wide transition-colors group-hover:text-signal">
+                  {c.value}
                 </span>
               </a>
-            </Reveal>
-            <Reveal delay={0.08}>
-              <a
-                href={`tel:${company.phone.replace(/\s/g, "")}`}
-                className="group flex items-start gap-5 rounded-2xl border border-line bg-ink-800 p-6 transition-all duration-300 hover:border-azure/40 hover:shadow-elevated"
-              >
-                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-ink-700 text-navy transition-colors duration-300 group-hover:bg-azure group-hover:text-white">
-                  <Phone className="h-5 w-5" aria-hidden />
-                </span>
-                <span>
-                  <span className="block font-semibold">Phone</span>
-                  <span className="mt-1 block text-sm text-steel-light">{company.phone}</span>
-                </span>
-              </a>
-            </Reveal>
-            <Reveal delay={0.16}>
-              <div className="flex items-start gap-5 rounded-2xl border border-line bg-ink-800 p-6">
-                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-ink-700 text-navy">
-                  <MapPin className="h-5 w-5" aria-hidden />
-                </span>
-                <span>
-                  <span className="block font-semibold">Office</span>
-                  <span className="mt-1 block text-sm text-steel-light">{company.address}</span>
-                </span>
-              </div>
-            </Reveal>
-          </div>
+            </li>
+          ))}
+          <li className="manifest-row" aria-hidden="true" />
+        </ul>
 
-          <Reveal delay={0.1}>
-            <QuoteForm compact />
-          </Reveal>
+        <div className="reveal mt-10 border border-line bg-graphite-800 p-6">
+          <p className="text-sm leading-relaxed text-paper">
+            Need a quote? The fastest route is the guided requirement form. It asks for exactly
+            what we need to price your order.
+          </p>
+          <Link href="/rfq" className="btn-signal mt-5">
+            Request a Quote
+          </Link>
         </div>
       </section>
     </>

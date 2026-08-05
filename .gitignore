@@ -21,3 +21,5 @@ build/
 Thumbs.db
 
 .vercel
+
+lighthouse-mobile.report.json

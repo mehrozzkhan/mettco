@@ -1,114 +1,94 @@
-import type { Metadata } from "next";
-import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
-import { company } from "@/lib/site";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
-import { SmoothScroll } from "@/components/motion/SmoothScroll";
+import type { Metadata, Viewport } from "next";
+import { IBM_Plex_Mono, Inter, Oswald } from "next/font/google";
+import Script from "next/script";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import Preloader from "@/components/Preloader";
+import Reveal from "@/components/Reveal";
+import StickyBar from "@/components/StickyBar";
+import { site } from "@/config/site";
 import "./globals.css";
 
-const inter = Inter({
+// Two families + a mono, subsetted, swapped — the whole font budget.
+// One weight per family: three small woff2 files total. Fewer font bytes
+// beats typographic range — the performance budget outranks decoration.
+const display = Oswald({
   subsets: ["latin"],
+  weight: "500",
+  variable: "--font-display",
+  display: "swap",
+});
+const sans = Inter({
+  subsets: ["latin"],
+  weight: "400",
   variable: "--font-sans",
   display: "swap",
 });
-
-const spaceGrotesk = Space_Grotesk({
+const mono = IBM_Plex_Mono({
   subsets: ["latin"],
-  variable: "--font-display",
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
+  weight: "400",
   variable: "--font-mono",
-  weight: ["400", "500", "600"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(`https://${company.domain}`),
-  title: {
-    default: `${company.name} — ${company.legalName}`,
-    template: `%s | ${company.name}`,
-  },
-  description: company.descriptionShort,
-  alternates: { canonical: "./" },
-  keywords: [
-    "industrial trading",
-    "industrial sourcing",
-    "engineering supplies",
-    "import export Pakistan",
-    "B2B procurement",
-    "packaging materials",
-    "safety equipment",
-    "MRO products",
-    "global sourcing",
-  ],
+  metadataBase: new URL(site.url),
+  title: "METTCO — General Order Supplier, Lahore | Supply, Services & Technology",
+  description:
+    "METTCO supplies office, industrial and safety products, arranges construction and facility work, and delivers IT and software services in Lahore. Quotes within 24 hours.",
+  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
-    title: `${company.name} — ${company.legalName}`,
-    description: company.descriptionShort,
-    siteName: company.name,
+    siteName: site.name,
+    locale: "en_PK",
   },
-  robots: { index: true, follow: true },
+  twitter: { card: "summary_large_image" },
 };
 
-const jsonLd = {
+export const viewport: Viewport = {
+  themeColor: "#111417",
+};
+
+const orgLd = {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": `https://${company.domain}/#organization`,
-      name: company.name,
-      legalName: company.legalName,
-      url: `https://${company.domain}`,
-      logo: `https://${company.domain}/logo.png`,
-      email: company.email,
-      telephone: company.phone,
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "42-P Izmir Town",
-        addressLocality: "Lahore",
-        addressCountry: "PK",
-      },
-      description: company.descriptionShort,
-    },
-    {
-      "@type": "LocalBusiness",
-      "@id": `https://${company.domain}/#localbusiness`,
-      name: company.name,
-      image: `https://${company.domain}/logo.png`,
-      url: `https://${company.domain}`,
-      email: company.email,
-      telephone: company.phone,
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "42-P Izmir Town",
-        addressLocality: "Lahore",
-        addressCountry: "PK",
-      },
-      parentOrganization: { "@id": `https://${company.domain}/#organization` },
-    },
-  ],
+  "@type": ["Organization", "LocalBusiness"],
+  name: site.name,
+  legalName: site.legalName,
+  url: site.url,
+  foundingDate: site.founded,
+  email: site.email,
+  telephone: site.phoneNumber,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: site.city,
+    addressCountry: "PK",
+  },
+  areaServed: { "@type": "City", name: site.city },
+  description:
+    "General order supply and facilitation company in Lahore. Supplies office, industrial and safety products, arranges construction and facility work, and delivers IT and software services.",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" className={`${display.variable} ${sans.variable} ${mono.variable}`}>
       <body>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-        <SmoothScroll />
+        <Preloader />
+        <a
+          href="#content"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[110] focus:bg-signal focus:px-4 focus:py-2 focus:font-mono focus:text-sm focus:text-graphite"
+        >
+          Skip to content
+        </a>
         <Header />
-        <main>{children}</main>
+        <main id="content">{children}</main>
         <Footer />
+        <StickyBar />
+        <Reveal />
+        <Script
+          id="org-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgLd) }}
+        />
       </body>
     </html>
   );
