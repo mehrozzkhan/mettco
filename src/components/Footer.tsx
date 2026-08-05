@@ -38,9 +38,7 @@ export default function Footer() {
             <Image src="/logo.png" alt="METTCO logo" width={32} height={32} className="h-8 w-8" />
             METTCO
           </p>
-          <p className="mt-3 max-w-[26ch] text-sm text-paper-dim">
-            {site.legalName} General order supply and facilitation, {site.city}.
-          </p>
+          <p className="mt-3 max-w-[26ch] text-sm text-paper-dim">{site.legalName}</p>
           <p className="mt-4 font-mono text-2xs uppercase tracking-widest text-paper-dim">
             Founded {site.founded} · {site.city} · NTN {site.ntn}
           </p>

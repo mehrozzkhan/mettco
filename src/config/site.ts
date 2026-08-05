@@ -28,7 +28,7 @@ export const site = {
   hours: "Mon–Sat, 9am–6pm PKT",
 
   // ---- Identity ---------------------------------------------------------
-  founderName: "Mehroz Khan",
+  founderName: "TN Khan",
   ntn: "I951648-6",
 
   // Pre-filled WhatsApp message for every wa.me deep link on the site.
