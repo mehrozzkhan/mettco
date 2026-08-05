@@ -136,7 +136,7 @@ export default function HomePage() {
         <div className="container flex flex-col gap-2 py-6 md:flex-row md:items-center md:gap-6">
           <span className="stamp shrink-0 border-signal/40 text-signal">Current work</span>
           <p className="text-sm text-paper">
-            Currently supplying office stationery to a public-sector bank branch in Lahore.
+            Currently supplying office stationery to a public-sector Bank in Lahore.
           </p>
         </div>
       </section>
