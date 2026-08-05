@@ -17,19 +17,19 @@ export const site = {
   country: "Pakistan",
   url: "https://www.mettco.com.pk", // apex 308s to www — canonicals must match the served host
 
-  // ---- Contact (replace placeholders with real values) ------------------
-  // WhatsApp number in international format, digits only. e.g. 923001234567
-  whatsappNumber: "<WHATSAPP_NUMBER>",
-  // Phone number as dialable string. e.g. +923001234567
-  phoneNumber: "<PHONE_NUMBER>",
-  // Display version of the phone number. e.g. 0300 1234567
-  phoneDisplay: "<PHONE_NUMBER>",
-  email: "<EMAIL>",
+  // ---- Contact ----------------------------------------------------------
+  // WhatsApp number in international format, digits only (no plus sign).
+  whatsappNumber: "923139485808",
+  // Phone number as dialable string (tel: links).
+  phoneNumber: "+923139485808",
+  // Display version of the phone number.
+  phoneDisplay: "+92 313 9485808",
+  email: "info@mettco.com.pk",
   hours: "Mon–Sat, 9am–6pm PKT",
 
   // ---- Identity ---------------------------------------------------------
-  founderName: "<FOUNDER_NAME>",
-  ntn: "<NTN_NUMBER>",
+  founderName: "Mehroz Khan",
+  ntn: "I951648-6",
 
   // Pre-filled WhatsApp message for every wa.me deep link on the site.
   whatsappMessage: "Hello METTCO, I'd like a quote for ",

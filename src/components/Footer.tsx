@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { site, waLink } from "@/config/site";
 
@@ -33,9 +34,12 @@ export default function Footer() {
     <footer className="border-t border-line pb-20 md:pb-0">
       <div className="container grid gap-10 py-12 md:grid-cols-4">
         <div>
-          <p className="font-display text-xl tracking-[0.3em]">METTCO</p>
+          <p className="flex items-center gap-3 font-display text-xl tracking-[0.3em]">
+            <Image src="/logo.png" alt="METTCO logo" width={32} height={32} className="h-8 w-8" />
+            METTCO
+          </p>
           <p className="mt-3 max-w-[26ch] text-sm text-paper-dim">
-            {site.legalName}. General order supply and facilitation, {site.city}.
+            {site.legalName} General order supply and facilitation, {site.city}.
           </p>
           <p className="mt-4 font-mono text-2xs uppercase tracking-widest text-paper-dim">
             Founded {site.founded} · {site.city} · NTN {site.ntn}

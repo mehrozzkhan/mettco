@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -35,9 +36,10 @@ export default function Header() {
       <div className={`container flex items-center justify-between ${scrolled ? "py-3" : "py-4"}`}>
         <Link
           href="/"
-          className="font-display text-xl tracking-[0.3em] text-paper"
+          className="flex items-center gap-3 font-display text-xl tracking-[0.3em] text-paper"
           aria-label="METTCO — home"
         >
+          <Image src="/logo.png" alt="METTCO logo" width={32} height={32} className="h-8 w-8" />
           METTCO
         </Link>
 
