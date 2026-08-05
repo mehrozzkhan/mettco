@@ -163,14 +163,15 @@
   }
 }
 
-/* Hero entrance — the one allowed sequence. CSS only, runs once. */
-.hero-in > * {
+/* Hero entrance — the one allowed sequence. CSS only, runs once.
+   The h1 is deliberately NOT animated: it is the LCP element, and an
+   opacity-0 start delays LCP. Speed outranks the decoration. */
+.hero-in > p {
   animation: hero-rise 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-.hero-in > *:nth-child(2) {
   animation-delay: 80ms;
 }
-.hero-in > *:nth-child(3) {
+.hero-in > div {
+  animation: hero-rise 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
   animation-delay: 160ms;
 }
 @keyframes hero-rise {
