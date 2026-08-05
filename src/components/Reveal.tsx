@@ -1,5 +1,6 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
 /**
@@ -7,8 +8,15 @@ import { useEffect } from "react";
  * IntersectionObserver flips .is-in on each .reveal element, once.
  * Content is never hidden without JS or under reduced motion (see CSS).
  * Stagger is applied via transition-delay, capped at 60ms per row.
+ *
+ * Re-runs on every route change: this component lives in the persistent
+ * root layout, so without the pathname dependency the .reveal elements
+ * mounted by client-side navigations would never be observed and would
+ * stay at opacity 0 (blank pages after tapping any nav link).
  */
 export default function Reveal() {
+  const pathname = usePathname();
+
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     document.body.classList.add("reveal-armed");
@@ -27,9 +35,11 @@ export default function Reveal() {
       { rootMargin: "0px 0px -8% 0px" },
     );
 
-    document.querySelectorAll<HTMLElement>(".reveal").forEach((el) => io.observe(el));
+    document
+      .querySelectorAll<HTMLElement>(".reveal:not(.is-in)")
+      .forEach((el) => io.observe(el));
     return () => io.disconnect();
-  }, []);
+  }, [pathname]);
 
   return null;
 }
