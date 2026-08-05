@@ -18,7 +18,7 @@ const rows = [
     title: "Office & General Order Supplies",
     spec: "Stationery, printing consumables, pantry, housekeeping, office equipment.",
     tag: "Currently live",
-    note: "Currently live — supplying a public-sector bank branch.",
+    note: "Currently live — supplying a public-sector Bank.",
   },
   {
     code: "A-02",
